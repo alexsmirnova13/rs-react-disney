@@ -28,7 +28,7 @@ const StyledNav = styled.nav`
 class Navbar extends React.Component {
   render() {
     return (
-      <StyledNav>
+      <StyledNav data-testid="navbar">
         <ul>
           <li>
             <Link to="/">Home</Link>

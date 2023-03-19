@@ -12,7 +12,7 @@ class OneCard extends Component<IOneItem> {
   }
   render() {
     return (
-      <StyledCard>
+      <StyledCard data-testid="card">
         <img src={this.props.snippet.thumbnails.default.url} />
         <p>{this.props.snippet.title}</p>
         <p>Название канала: {this.props.snippet.channelTitle}</p>

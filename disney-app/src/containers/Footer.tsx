@@ -24,7 +24,7 @@ const StyledFooter = styled.div`
 class Footer extends React.Component {
   render() {
     return (
-      <StyledFooter>
+      <StyledFooter data-testid="footer">
         <a href="https://rs.school/angular/" target="_blank" rel="noreferrer">
           <img src="https://rs.school/images/rs_school_js.svg" alt="rs-school logo" />
         </a>
