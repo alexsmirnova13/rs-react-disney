@@ -8,6 +8,8 @@ const StyledCards = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1.25rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
 class AllCards extends Component<IResponse> {
   constructor(props: IResponse) {
