@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
-import { IOneItem } from 'data/response.models';
+import { IHero } from 'data/HPResponse.models';
 
 const StyledCard = styled.div`
   box-shadow: 0 0 5px;
@@ -19,21 +19,22 @@ const StyledCard = styled.div`
     border-radius: 20px;
   }
 `;
-class OneCard extends Component<IOneItem> {
-  constructor(props: IOneItem) {
-    super(props);
-  }
+
+interface ICardProps {
+  card: IHero;
+}
+class OneCard extends Component<ICardProps> {
   render() {
     return (
       <StyledCard data-testid="card">
-        <img src={this.props.snippet.thumbnails.default.url} />
+        <img src={this.props.card.image} />
         <h3>
-          <b>{this.props.snippet.title}</b>
+          <b>{this.props.card.name}</b>
         </h3>
-        <p>Channel name: {this.props.snippet.channelTitle}</p>
-        <p>Viewed: {this.props.statistics.viewCount}</p>
-        <p>Likes: {this.props.statistics.likeCount}</p>
-        <p>Dislikes: {this.props.statistics.dislikeCount}</p>
+        <p>House: {this.props.card.house}</p>
+        <p>Eye color: {this.props.card.eyeColour}</p>
+        <p>Date Of Birth: {this.props.card.dateOfBirth}</p>
+        <p>Patronus: {this.props.card.patronus}</p>
       </StyledCard>
     );
   }

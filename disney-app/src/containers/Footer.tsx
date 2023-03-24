@@ -31,7 +31,7 @@ class Footer extends React.Component {
         <a href="https://github.com/alexsmirnova13" target="_blank" rel="noreferrer">
           Aleksandra Smirnova
         </a>
-        <p>2022</p>
+        <p>2023</p>
       </StyledFooter>
     );
   }

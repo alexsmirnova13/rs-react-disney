@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
-import OneCard from 'components/oneCard';
-import { IHero } from 'data/HPResponse.models';
+import { INewHero } from 'data/HPResponse.models';
+import OneNewCard from 'components/oneNewCard';
+// import { IOneNewItem } from 'data/response.models';
 
 const StyledCards = styled.div`
   justify-content: center;
@@ -12,20 +13,20 @@ const StyledCards = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
 `;
-interface IAllCardsProps {
-  cards: IHero[];
+interface IAllNewCardsProps {
+  newCards: INewHero[];
 }
-class AllCards extends Component<IAllCardsProps> {
+class AllNewCards extends Component<IAllNewCardsProps> {
   render() {
-    const cards = this.props.cards;
+    const cards = this.props.newCards;
     return (
       <StyledCards>
         {cards.map((item) => (
-          <OneCard card={item} key={item.id} />
+          <OneNewCard card={item} key={item.id} />
         ))}
       </StyledCards>
     );
   }
 }
 
-export default AllCards;
+export default AllNewCards;

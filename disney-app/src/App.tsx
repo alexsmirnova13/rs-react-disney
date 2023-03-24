@@ -7,6 +7,7 @@ import './App.css';
 import HomePage from 'pages/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from '@emotion/styled';
+import FormPage from 'pages/FormPage';
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/form" element={<FormPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
