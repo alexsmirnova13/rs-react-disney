@@ -29,7 +29,7 @@ class OneNewCard extends Component<IOneNewCardProps> {
     if (image) {
       const imageUrl = URL.createObjectURL(image);
       return (
-        <StyledCard data-testid="card">
+        <StyledCard data-testid="new-card">
           <h3>
             <b>{this.props.card.name}</b>
           </h3>

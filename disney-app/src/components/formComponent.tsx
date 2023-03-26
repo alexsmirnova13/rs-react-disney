@@ -1,16 +1,14 @@
 import styled from '@emotion/styled';
-import { INewHero } from 'data/HPResponse.models';
+import { IFormComponentProps } from 'data/HPResponse.models';
 import React, { Component } from 'react';
-import { isErrorDate, isErrorName, isValidEmpty, isValidFile } from './validation';
+import { pass_gen } from 'utils/functions';
+import { isErrorDate, isErrorName, isValidEmpty, isValidFile } from '../utils/validation';
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: start;
 `;
-interface IFormComponentProps {
-  onSubmit: (res: INewHero) => void;
-}
 class FormComponent extends Component<IFormComponentProps> {
   private readonly nameRef: React.RefObject<HTMLInputElement> = React.createRef();
   private readonly birthdayRef: React.RefObject<HTMLInputElement> = React.createRef();
@@ -20,6 +18,7 @@ class FormComponent extends Component<IFormComponentProps> {
   private readonly genderFemaleRef: React.RefObject<HTMLInputElement> = React.createRef();
   private readonly imageRef: React.RefObject<HTMLInputElement> = React.createRef();
   private readonly checkRef: React.RefObject<HTMLInputElement> = React.createRef();
+  private readonly formRef: React.RefObject<HTMLFormElement> = React.createRef();
   state = {
     nameError: null,
     dateError: null,
@@ -82,46 +81,14 @@ class FormComponent extends Component<IFormComponentProps> {
       });
       isFormValid = false;
     }
-
     if (isFormValid) {
-      if (this.nameRef.current) {
-        const inputElement = this.nameRef.current as HTMLInputElement;
-        inputElement.value = '';
-      }
-      if (this.birthdayRef.current) {
-        const birthday = this.birthdayRef.current as HTMLInputElement;
-        birthday.value = '';
-      }
-      if (this.wizardRef.current) {
-        const wizard = this.wizardRef.current as HTMLInputElement;
-        wizard.checked = false;
-      }
-      if (this.checkRef.current) {
-        const check = this.checkRef.current as HTMLInputElement;
-        check.checked = false;
-      }
-      if (this.genderMaleRef.current) {
-        // !!!
-        const genderMale = this.genderMaleRef.current as HTMLInputElement;
-        const genderFemale = this.genderMaleRef.current as HTMLInputElement;
-        genderMale.checked = false;
-        genderFemale.checked = false;
-      }
-      if (this.imageRef.current) {
-        const image = this.imageRef.current as HTMLInputElement;
-        image.files = new DataTransfer().files;
-      }
-      if (this.houseRef.current) {
-        const defaultValue = 'none';
-        const house = this.houseRef.current;
-        house.value = defaultValue;
-      }
+      this.formRef.current?.reset();
       this.props.onSubmit(result);
     }
   };
   render() {
     return (
-      <StyledForm onSubmit={this.handleSubmitClick}>
+      <StyledForm onSubmit={this.handleSubmitClick} ref={this.formRef}>
         <label>
           Name of new HP Hero
           <input type="text" ref={this.nameRef} />
@@ -178,15 +145,6 @@ class FormComponent extends Component<IFormComponentProps> {
       </StyledForm>
     );
   }
-}
-function pass_gen() {
-  const chrs = 'abdehkmnpswxzABDEFGHKMNPQRSTWXZ123456789';
-  let str = '';
-  for (let i = 0; i < 20; i++) {
-    const pos = Math.floor(Math.random() * chrs.length);
-    str += chrs.substring(pos, pos + 1);
-  }
-  return str;
 }
 
 export default FormComponent;

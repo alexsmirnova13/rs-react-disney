@@ -1,10 +1,14 @@
 import AllCards from 'containers/AllCards';
 import response from 'data/HPResponse';
-import React from 'react';
+import React, { Component } from 'react';
 
-class HomePage extends React.Component {
+class HomePage extends Component {
   render() {
-    return <AllCards cards={response} />;
+    return (
+      <div data-testid="home-page">
+        <AllCards cards={response} />;
+      </div>
+    );
   }
 }
 

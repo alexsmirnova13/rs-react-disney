@@ -3,7 +3,7 @@ export interface IHero {
   name: string;
   alternate_names: string[];
   species: string;
-  gender: gender;
+  gender: string;
   house: string;
   dateOfBirth: string | null;
   yearOfBirth: number | null;
@@ -27,7 +27,7 @@ export interface IWand {
   length: number | null;
 }
 
-type gender = 'male' | 'female';
+// type Tgender = 'male' | 'female';
 
 export interface INewHero {
   name: string | undefined;
@@ -38,4 +38,8 @@ export interface INewHero {
   image: File | undefined;
   checked: boolean | undefined;
   id: string;
+}
+
+export interface IFormComponentProps {
+  onSubmit: (res: INewHero) => void;
 }
