@@ -32,9 +32,10 @@ type gender = 'male' | 'female';
 export interface INewHero {
   name: string | undefined;
   dateOfBirth: string | undefined;
-  wizard: string | undefined;
+  wizard: boolean | undefined;
   house: string | undefined;
   gender: string;
   image: File | undefined;
+  checked: boolean | undefined;
   id: string;
 }
