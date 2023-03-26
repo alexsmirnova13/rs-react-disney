@@ -47,32 +47,31 @@ class FormComponent extends Component<IFormComponentProps> {
     });
     if (!result.name || isErrorName(result.name)) {
       this.setState({
-        nameError:
-          'Имя должно быть длинной от 3 до 20 символов и должно начинаться с заглавной буквы',
+        nameError: 'The name should contain 3-20 characters with the first letter capitalized.',
       });
       isFormValid = false;
     }
     if (!result.dateOfBirth || isErrorDate(result.dateOfBirth)) {
       this.setState({
-        dateError: 'Дата должна быть не позднее вчера',
+        dateError: 'The date must not be later than yesterday',
       });
       isFormValid = false;
     }
     if (!result.gender || !isValidEmpty(result.gender)) {
       this.setState({
-        genderEmpty: 'Выберите пол героя',
+        genderEmpty: 'Select the gender of the hero',
       });
       isFormValid = false;
     }
     if (!result.image || !isValidFile(result.image)) {
       this.setState({
-        imageError: 'Выберите изображение героя',
+        imageError: 'Select the image of the hero',
       });
       isFormValid = false;
     }
     if (!result.checked) {
       this.setState({
-        checkedError: 'Нажмите галочку',
+        checkedError: 'Check the box',
       });
       isFormValid = false;
     }
@@ -85,12 +84,12 @@ class FormComponent extends Component<IFormComponentProps> {
     return (
       <StyledForm onSubmit={this.handleSubmitClick} ref={this.formRef}>
         <label className="label">
-          Имя героя:
+          Hero name:
           <input className="input-text" type="text" ref={this.nameRef} />
           {this.state.nameError && <div className="error">{this.state.nameError}</div>}
         </label>
         <label className="label" htmlFor="date-input">
-          Выберите дату:
+          Select a date:
           <input
             type="date"
             className="input-select"
@@ -101,7 +100,7 @@ class FormComponent extends Component<IFormComponentProps> {
           {this.state.dateError && <div className="error">{this.state.dateError}</div>}
         </label>
         <label className="label" htmlFor="checkbox-input">
-          Волшебник:
+          Is the hero a wizard?:
           <input
             type="checkbox"
             id="checkbox-input"
@@ -111,7 +110,7 @@ class FormComponent extends Component<IFormComponentProps> {
           />
         </label>
         <label className="label" htmlFor="select-input">
-          Выберите факультет:
+          Choose your House:
           <select
             id="select-input"
             className="input-select"
@@ -119,15 +118,15 @@ class FormComponent extends Component<IFormComponentProps> {
             name="select"
             ref={this.houseRef}
           >
-            <option value="Gryffindor">Гриффиндор</option>
-            <option value="Ravenclaw">Когтевран</option>
-            <option value="Hufflepuff">Пуффендуй</option>
-            <option value="Slytherin">Слизерин</option>
-            <option value="none">Отсутствует</option>
+            <option value="Gryffindor">Gryffindor</option>
+            <option value="Ravenclaw">Ravenclaw</option>
+            <option value="Hufflepuff">Hufflepuff</option>
+            <option value="Slytherin">Slytherin</option>
+            <option value="none">none</option>
           </select>
         </label>
         <label className="label">
-          Пол:
+          Choose hero gender:
           <label>
             male
             <input type="radio" name="gender" value="male" ref={this.genderMaleRef} />
@@ -139,17 +138,17 @@ class FormComponent extends Component<IFormComponentProps> {
           {this.state.genderEmpty && <div className="error">{this.state.genderEmpty}</div>}
         </label>
         <label className="label">
-          изображение героя
+          Choose hero picture
           <input type="file" ref={this.imageRef} accept="image/*" multiple={false} />
           {this.state.imageError && <div className="error">{this.state.imageError}</div>}
         </label>
         <label className="label">
-          Нажми, а то магии не будет:
+          Press it, or there will be no magic:
           <input type="checkbox" defaultValue="false" ref={this.checkRef} />
           {this.state.checkedError && <div className="error">{this.state.checkedError}</div>}
         </label>
         <button className="button" type="submit">
-          Создать
+          Create
         </button>
       </StyledForm>
     );

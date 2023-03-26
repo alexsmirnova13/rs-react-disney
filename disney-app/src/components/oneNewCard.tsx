@@ -32,10 +32,10 @@ class OneNewCard extends Component<IOneNewCardProps> {
           <h3>
             <b>{this.props.card.name}</b>
           </h3>
-          <p>dateOfBirth: {this.props.card.dateOfBirth}</p>
-          <p>wizard: {String(this.props.card.wizard)}</p>
-          <p>house: {this.props.card.house}</p>
-          <p>gender: {this.props.card.gender}</p>
+          <p>Date of Birth: {this.props.card.dateOfBirth}</p>
+          <p>Wizard: {String(this.props.card.wizard)}</p>
+          <p>House: {this.props.card.house}</p>
+          <p>Gender: {this.props.card.gender}</p>
           <img src={imageUrl} alt="newHero" />
         </StyledCard>
       );

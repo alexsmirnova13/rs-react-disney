@@ -38,7 +38,7 @@ class FormPage extends Component {
   render() {
     return (
       <StyledFormPage>
-        <h1>Заполните форму нового героя</h1>
+        <h1>Make a new HP hero</h1>
         <div className="form">
           <FormComponent onSubmit={this.handleSubmit} />
           {this.state.messageSuccsess && <Message message={this.state.messageSuccsess} />}
