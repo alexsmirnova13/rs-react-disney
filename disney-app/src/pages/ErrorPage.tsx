@@ -260,9 +260,6 @@ class ErrorPage extends React.Component {
             <div className="eye"></div>
           </div>
         </div>
-        <div>
-          <button className="button">Home</button>
-        </div>
       </Divch>
     );
   }

@@ -8,6 +8,7 @@ const StyledNav = styled.nav`
   align-items: center;
   height: 75px;
   width: 200px;
+  padding-right: 30px;
   ul {
     display: flex;
     flex-direction: row;
@@ -35,6 +36,9 @@ class Navbar extends React.Component {
           </li>
           <li>
             <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/form">Form</Link>
           </li>
         </ul>
       </StyledNav>

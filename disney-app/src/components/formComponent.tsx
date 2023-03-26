@@ -1,14 +1,8 @@
-import styled from '@emotion/styled';
 import { IFormComponentProps } from 'data/HPResponse.models';
 import React, { Component } from 'react';
 import { pass_gen } from 'utils/functions';
 import { isErrorDate, isErrorName, isValidEmpty, isValidFile } from '../utils/validation';
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-`;
+import { StyledForm } from './formComponentStyle';
 class FormComponent extends Component<IFormComponentProps> {
   private readonly nameRef: React.RefObject<HTMLInputElement> = React.createRef();
   private readonly birthdayRef: React.RefObject<HTMLInputElement> = React.createRef();
@@ -19,6 +13,7 @@ class FormComponent extends Component<IFormComponentProps> {
   private readonly imageRef: React.RefObject<HTMLInputElement> = React.createRef();
   private readonly checkRef: React.RefObject<HTMLInputElement> = React.createRef();
   private readonly formRef: React.RefObject<HTMLFormElement> = React.createRef();
+
   state = {
     nameError: null,
     dateError: null,
@@ -59,7 +54,7 @@ class FormComponent extends Component<IFormComponentProps> {
     }
     if (!result.dateOfBirth || isErrorDate(result.dateOfBirth)) {
       this.setState({
-        dateError: 'Дата должна быть не позднее сегодня',
+        dateError: 'Дата должна быть не позднее вчера',
       });
       isFormValid = false;
     }
@@ -89,17 +84,23 @@ class FormComponent extends Component<IFormComponentProps> {
   render() {
     return (
       <StyledForm onSubmit={this.handleSubmitClick} ref={this.formRef}>
-        <label>
-          Name of new HP Hero
-          <input type="text" ref={this.nameRef} />
+        <label className="label">
+          Имя героя:
+          <input className="input-text" type="text" ref={this.nameRef} />
           {this.state.nameError && <div className="error">{this.state.nameError}</div>}
         </label>
-        <label htmlFor="date-input">
+        <label className="label" htmlFor="date-input">
           Выберите дату:
-          <input type="date" id="date-input" name="date" ref={this.birthdayRef} />
+          <input
+            type="date"
+            className="input-select"
+            id="date-input"
+            name="date"
+            ref={this.birthdayRef}
+          />
           {this.state.dateError && <div className="error">{this.state.dateError}</div>}
         </label>
-        <label htmlFor="checkbox-input">
+        <label className="label" htmlFor="checkbox-input">
           Волшебник:
           <input
             type="checkbox"
@@ -109,9 +110,15 @@ class FormComponent extends Component<IFormComponentProps> {
             ref={this.wizardRef}
           />
         </label>
-        <label htmlFor="select-input">
+        <label className="label" htmlFor="select-input">
           Выберите факультет:
-          <select id="select-input" defaultValue="none" name="select" ref={this.houseRef}>
+          <select
+            id="select-input"
+            className="input-select"
+            defaultValue="none"
+            name="select"
+            ref={this.houseRef}
+          >
             <option value="Gryffindor">Гриффиндор</option>
             <option value="Ravenclaw">Когтевран</option>
             <option value="Hufflepuff">Пуффендуй</option>
@@ -119,7 +126,7 @@ class FormComponent extends Component<IFormComponentProps> {
             <option value="none">Отсутствует</option>
           </select>
         </label>
-        <label>
+        <label className="label">
           Пол:
           <label>
             male
@@ -131,17 +138,19 @@ class FormComponent extends Component<IFormComponentProps> {
           </label>
           {this.state.genderEmpty && <div className="error">{this.state.genderEmpty}</div>}
         </label>
-        <label>
+        <label className="label">
           изображение героя
           <input type="file" ref={this.imageRef} accept="image/*" multiple={false} />
           {this.state.imageError && <div className="error">{this.state.imageError}</div>}
         </label>
-        <label>
+        <label className="label">
           Нажми, а то магии не будет:
           <input type="checkbox" defaultValue="false" ref={this.checkRef} />
           {this.state.checkedError && <div className="error">{this.state.checkedError}</div>}
         </label>
-        <button type="submit">Sign up</button>
+        <button className="button" type="submit">
+          Создать
+        </button>
       </StyledForm>
     );
   }

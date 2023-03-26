@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const StyledMessage = styled.div``;
+const StyledMessage = styled.div`
+  position: absolute;
+`;
 interface IMessageProps {
   message: string;
 }
