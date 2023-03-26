@@ -41,8 +41,8 @@ class FormPage extends Component {
         <h1>Заполните форму нового героя</h1>
         <div className="form">
           <FormComponent onSubmit={this.handleSubmit} />
+          {this.state.messageSuccsess && <Message message={this.state.messageSuccsess} />}
         </div>
-        {this.state.messageSuccsess && <Message message={this.state.messageSuccsess} />}
         <AllNewCards newCards={this.state.newCards} />
       </StyledFormPage>
     );

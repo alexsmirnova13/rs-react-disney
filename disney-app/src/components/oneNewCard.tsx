@@ -21,7 +21,6 @@ const StyledCard = styled.div`
 `;
 interface IOneNewCardProps {
   card: INewHero;
-  key: string;
 }
 class OneNewCard extends Component<IOneNewCardProps> {
   render() {
@@ -34,7 +33,7 @@ class OneNewCard extends Component<IOneNewCardProps> {
             <b>{this.props.card.name}</b>
           </h3>
           <p>dateOfBirth: {this.props.card.dateOfBirth}</p>
-          <p>wizard: {this.props.card.wizard}</p>
+          <p>wizard: {String(this.props.card.wizard)}</p>
           <p>house: {this.props.card.house}</p>
           <p>gender: {this.props.card.gender}</p>
           <img src={imageUrl} alt="newHero" />
