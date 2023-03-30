@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import OneCard from 'components/oneCard';
 import { IHero } from 'data/HPResponse.models';
@@ -15,17 +15,15 @@ const StyledCards = styled.div`
 interface IAllCardsProps {
   cards: IHero[];
 }
-class AllCards extends Component<IAllCardsProps> {
-  render() {
-    const cards = this.props.cards;
-    return (
-      <StyledCards>
-        {cards.map((item) => (
-          <OneCard card={item} key={item.id} />
-        ))}
-      </StyledCards>
-    );
-  }
-}
 
+const AllCards = (props: IAllCardsProps) => {
+  const cards = props.cards;
+  return (
+    <StyledCards>
+      {cards.map((item) => (
+        <OneCard card={item} key={item.id} />
+      ))}
+    </StyledCards>
+  );
+};
 export default AllCards;

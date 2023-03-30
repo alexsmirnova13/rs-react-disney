@@ -26,24 +26,21 @@ const StyledNav = styled.nav`
   }
 `;
 
-class Navbar extends React.Component {
-  render() {
-    return (
-      <StyledNav data-testid="navbar">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/form">Form</Link>
-          </li>
-        </ul>
-      </StyledNav>
-    );
-  }
-}
-
+const Navbar = () => {
+  return (
+    <StyledNav data-testid="navbar">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/form">Form</Link>
+        </li>
+      </ul>
+    </StyledNav>
+  );
+};
 export default Navbar;

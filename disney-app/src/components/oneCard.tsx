@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { IHero } from 'data/HPResponse.models';
 
@@ -23,21 +23,18 @@ const StyledCard = styled.div`
 interface ICardProps {
   card: IHero;
 }
-class OneCard extends Component<ICardProps> {
-  render() {
-    return (
-      <StyledCard data-testid="card">
-        <img src={this.props.card.image} />
-        <h3>
-          <b>{this.props.card.name}</b>
-        </h3>
-        <p>House: {this.props.card.house}</p>
-        <p>Eye color: {this.props.card.eyeColour}</p>
-        <p>Date Of Birth: {this.props.card.dateOfBirth}</p>
-        <p>Patronus: {this.props.card.patronus}</p>
-      </StyledCard>
-    );
-  }
-}
-
+const OneCard = (props: ICardProps) => {
+  return (
+    <StyledCard data-testid="card">
+      <img src={props.card.image} />
+      <h3>
+        <b>{props.card.name}</b>
+      </h3>
+      <p>House: {props.card.house}</p>
+      <p>Eye color: {props.card.eyeColour}</p>
+      <p>Date Of Birth: {props.card.dateOfBirth}</p>
+      <p>Patronus: {props.card.patronus}</p>
+    </StyledCard>
+  );
+};
 export default OneCard;

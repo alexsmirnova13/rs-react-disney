@@ -21,20 +21,19 @@ const StyledFooter = styled.div`
     padding-rigth: 20px;
   }
 `;
-class Footer extends React.Component {
-  render() {
-    return (
-      <StyledFooter data-testid="footer">
-        <a href="https://rs.school/angular/" target="_blank" rel="noreferrer">
-          <img src="https://rs.school/images/rs_school_js.svg" alt="rs-school logo" />
-        </a>
-        <a href="https://github.com/alexsmirnova13" target="_blank" rel="noreferrer">
-          Aleksandra Smirnova
-        </a>
-        <p>2023</p>
-      </StyledFooter>
-    );
-  }
-}
+
+const Footer = () => {
+  return (
+    <StyledFooter data-testid="footer">
+      <a href="https://rs.school/angular/" target="_blank" rel="noreferrer">
+        <img src="https://rs.school/images/rs_school_js.svg" alt="rs-school logo" />
+      </a>
+      <a href="https://github.com/alexsmirnova13" target="_blank" rel="noreferrer">
+        Aleksandra Smirnova
+      </a>
+      <p>2023</p>
+    </StyledFooter>
+  );
+};
 
 export default Footer;

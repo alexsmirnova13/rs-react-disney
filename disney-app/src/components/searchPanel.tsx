@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 const StyledSearchBar = styled.form`
   input {
@@ -21,32 +21,26 @@ const StyledSearchBar = styled.form`
     cursor: pointer;
   }
 `;
-class SearchPanel extends React.Component {
-  state = {
-    inputValue: '',
-  };
 
-  handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+const SearchPanel = () => {
+  const [inputValue, setInputValue] = useState('');
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const { inputValue } = this.state;
     const key = new Date().toISOString();
     localStorage.setItem(key, inputValue);
   };
-  handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const inputValue = event.target.value;
-    this.setState({ inputValue });
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const inputPanelValue = event.target.value;
+    setInputValue(inputPanelValue);
   };
-  render() {
-    const { inputValue } = this.state;
-    return (
-      <StyledSearchBar data-testid="search" onSubmit={this.handleSubmit}>
-        <input data-testid="input" value={inputValue} onChange={this.handleInputChange} />
-        <button data-testid="button" type="submit">
-          Search
-        </button>
-      </StyledSearchBar>
-    );
-  }
-}
 
+  return (
+    <StyledSearchBar data-testid="search" onSubmit={handleSubmit}>
+      <input data-testid="input" value={inputValue} onChange={handleInputChange} />
+      <button data-testid="button" type="submit">
+        Search
+      </button>
+    </StyledSearchBar>
+  );
+};
 export default SearchPanel;

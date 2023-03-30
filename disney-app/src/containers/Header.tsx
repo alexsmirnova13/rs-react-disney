@@ -15,19 +15,17 @@ const StyledHeader = styled.div`
   }
 `;
 
-class Header extends React.Component {
-  render() {
-    return (
-      <StyledHeader data-testid="header">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/700px-Disney_wordmark.svg.png?20171113041617"
-          alt="disney-logo"
-        />
-        <SearchPanel />
-        <Navbar />
-      </StyledHeader>
-    );
-  }
-}
+const Header = () => {
+  return (
+    <StyledHeader data-testid="header">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/700px-Disney_wordmark.svg.png?20171113041617"
+        alt="disney-logo"
+      />
+      <SearchPanel />
+      <Navbar />
+    </StyledHeader>
+  );
+};
 
 export default Header;

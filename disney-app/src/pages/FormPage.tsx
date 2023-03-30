@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import FormComponent from 'components/formComponent';
+import FormComponent from 'components/formComponent1';
 import Message from 'components/notification';
 import AllNewCards from 'containers/AllNewCards';
 import { INewHero } from 'data/HPResponse.models';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 const StyledFormPage = styled.div`
   margin-left: auto;
@@ -24,29 +24,27 @@ const StyledFormPage = styled.div`
     margin-bottom: 20px;
   }
 `;
-class FormPage extends Component {
-  state = {
-    newCards: [] as INewHero[],
-    messageSuccsess: null,
-  };
-  handleSubmit = (res: INewHero) => {
-    this.setState({ newCards: this.state.newCards.concat(res), messageSuccsess: 'Успешно' });
+
+const FormPage = () => {
+  const [newCards, setNewCards] = useState<INewHero[]>([]);
+  const [messageSuccess, setMessageSuccess] = useState('');
+  const handleSubmit = (res: INewHero) => {
+    setNewCards([...newCards, res]);
+    setMessageSuccess('Success');
     setTimeout(() => {
-      this.setState({ messageSuccsess: null });
+      setMessageSuccess('');
     }, 1000);
   };
-  render() {
-    return (
-      <StyledFormPage>
-        <h1>Make a new HP hero</h1>
-        <div className="form">
-          <FormComponent onSubmit={this.handleSubmit} />
-          {this.state.messageSuccsess && <Message message={this.state.messageSuccsess} />}
-        </div>
-        <AllNewCards newCards={this.state.newCards} />
-      </StyledFormPage>
-    );
-  }
-}
+  return (
+    <StyledFormPage>
+      <h1>Make a new HP hero</h1>
+      <div className="form">
+        <FormComponent onSubmit={handleSubmit} />
+        {messageSuccess && <Message message={messageSuccess} />}
+      </div>
+      <AllNewCards newCards={newCards} />
+    </StyledFormPage>
+  );
+};
 
 export default FormPage;
