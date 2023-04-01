@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import Navbar from 'components/navbar';
-import SearchPanel from 'components/searchPanel';
 import React from 'react';
 
 const StyledHeader = styled.div`
@@ -22,7 +21,7 @@ const Header = () => {
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/700px-Disney_wordmark.svg.png?20171113041617"
         alt="disney-logo"
       />
-      <SearchPanel />
+      {/* <SearchPanel /> */}
       <Navbar />
     </StyledHeader>
   );

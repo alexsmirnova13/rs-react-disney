@@ -31,5 +31,5 @@ export const isErrorDate = (str: string) => {
 
 export const validateDate = (value: string) => {
   const today = new Date().toISOString().split('T')[0];
-  return value <= today || 'Выберите дату не позднее сегодняшней';
+  return value <= today || 'Select a date no later than today';
 };

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 const StyledSearchBar = styled.form`
   input {
@@ -24,12 +24,19 @@ const StyledSearchBar = styled.form`
 
 const SearchPanel = () => {
   const [inputValue, setInputValue] = useState(localStorage.getItem('value') || '');
+  const searchRef = useRef('');
+
+  useEffect(() => {
+    searchRef.current = inputValue;
+  }, [inputValue]);
+
   useEffect(() => {
     return () => {
-      localStorage.setItem('value', inputValue);
+      localStorage.setItem('value', searchRef.current);
     };
-  }, [inputValue]);
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
   return (
