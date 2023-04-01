@@ -1,24 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 const StyledSearchBar = styled.form`
+  width: 100%;
   input {
+    display: block;
     width: 300px;
     font-size: 13px;
     padding: 6px 0 4px 10px;
     border: 1px solid #cecece;
     background: #f6f6f6;
     border-radius: 8px;
-  }
-  button {
-    width: 70px;
-    padding: 6px 0 4px 6px;
-    border: 1px solid #cecece;
-    background: #f6f6f6;
-    border-radius: 8px;
-    margin-left: 5px;
-  }
-  button:hover {
-    cursor: pointer;
+    margin: 20px auto 30px auto;
   }
 `;
 
