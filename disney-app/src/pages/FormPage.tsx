@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import FormComponent from 'components/formComponent1';
+import FormComponent from 'components/formComponent';
 import Message from 'components/notification';
 import AllNewCards from 'containers/AllNewCards';
 import { INewHero } from 'data/HPResponse.models';
@@ -39,7 +39,7 @@ const FormPage = () => {
     <StyledFormPage>
       <h1>Make a new HP hero</h1>
       <div className="form">
-        <FormComponent onSubmit={handleSubmit} />
+        <FormComponent onParentSubmit={handleSubmit} />
         {messageSuccess && <Message message={messageSuccess} />}
       </div>
       <AllNewCards newCards={newCards} />

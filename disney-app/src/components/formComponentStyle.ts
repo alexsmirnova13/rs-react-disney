@@ -27,7 +27,7 @@ export const StyledForm = styled.form`
     border-radius: 8px;
     margin-top: 20px;
   }
-  .input-text {
+  .input-name {
     width: 250px;
     font-size: 13px;
     padding: 6px 0 4px 10px;

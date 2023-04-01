@@ -41,5 +41,15 @@ export interface INewHero {
 }
 
 export interface IFormComponentProps {
-  onSubmit: (res: INewHero) => void;
+  onParentSubmit: (res: INewHero) => void;
 }
+
+export type FormValues = {
+  inputName: string;
+  inputDate: string;
+  radioGender: string;
+  house: string;
+  isWizard: boolean;
+  fileInput: FileList | undefined;
+  inputCheckbox: boolean;
+};
