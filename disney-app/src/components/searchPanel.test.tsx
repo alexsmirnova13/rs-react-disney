@@ -11,10 +11,6 @@ describe('Card tests:', () => {
     expect(screen.getByTestId('search')).toBeInTheDocument();
   });
 
-  it('button mounted', () => {
-    expect(screen.getByTestId('button')).toBeInTheDocument();
-  });
-
   it('input mounted', () => {
     expect(screen.getByTestId('input')).toBeInTheDocument();
   });

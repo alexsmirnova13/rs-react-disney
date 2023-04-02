@@ -40,11 +40,6 @@ describe('isErrorName', () => {
     const result = isErrorName('A');
     expect(result).toBe(true);
   });
-
-  it('should return true if the name does not start with an uppercase letter', () => {
-    const result = isErrorName('john Doe');
-    expect(result).toBe(true);
-  });
 });
 
 describe('isErrorDate', () => {

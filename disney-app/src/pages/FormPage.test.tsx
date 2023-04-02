@@ -6,7 +6,7 @@ window.URL.createObjectURL = jest.fn();
 describe('FormPage', () => {
   test('renders page header', () => {
     render(<FormPage />);
-    const headerElement = screen.getByText(/Заполните форму нового героя/i);
+    const headerElement = screen.getByText(/make a new hp hero/i);
     expect(headerElement).toBeInTheDocument();
   });
 });
