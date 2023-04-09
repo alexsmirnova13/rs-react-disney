@@ -9,7 +9,6 @@ const StyledSearchBar = styled.form`
     padding: 6px 0 4px 10px;
     border: 1px solid #cecece;
     background: #f6f6f6;
-    // border-radius: 8px;
     margin: 20px auto 30px auto;
   }
   input:focus {

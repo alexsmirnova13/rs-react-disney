@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import SearchPanel from './searchPanel';
 
-describe('Card tests:', () => {
+describe('search panel tests:', () => {
   beforeEach(() => {
     render(<SearchPanel onParentEnter={() => 'da'} />);
   });
