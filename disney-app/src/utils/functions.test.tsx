@@ -1,4 +1,4 @@
-import { pass_gen } from './functions';
+import { getBase64, pass_gen } from './functions';
 
 describe('pass_gen', () => {
   it('should generate a string of length 20', () => {
@@ -16,5 +16,13 @@ describe('pass_gen', () => {
     const password1 = pass_gen();
     const password2 = pass_gen();
     expect(password1).not.toBe(password2);
+  });
+});
+
+describe('getBase64', () => {
+  it('should return a base64 string for a given file', async () => {
+    const file = new File(['hello world'], 'test.txt', { type: 'text/plain' });
+    const result = await getBase64(file);
+    expect(result).toContain('data:text/plain;base64,aGVsbG8gd29ybGQ=');
   });
 });

@@ -65,7 +65,7 @@ const Modal = (props: IModalProps) => {
   const isoDateString = props.card.attributes.createdAt;
   const date = new Date(Date.parse(isoDateString));
   return (
-    <StyledModal onClick={props.onClose}>
+    <StyledModal data-testid="modal" onClick={props.onClose}>
       <div className="window" onClick={handleWindowClick}>
         <button onClick={props.onClose}>x</button>
         <div className="modal-content">

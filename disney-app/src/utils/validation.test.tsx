@@ -1,62 +1,27 @@
-import { isErrorDate, isErrorName, isValidEmpty, isValidFile } from './validation';
+import { isValidFirstLetter, validateDate } from './validation';
 
-describe('isValidEmpty', () => {
-  it('should return true if the string is not empty after trimming', () => {
-    const result = isValidEmpty('   hello   ');
+describe('isValidFirstLetter', () => {
+  it('returns true if the first letter is uppercase', () => {
+    const result = isValidFirstLetter('Hello');
     expect(result).toBe(true);
   });
 
-  it('should return false if the string is empty after trimming', () => {
-    const result = isValidEmpty('   ');
-    expect(result).toBe(false);
+  it('returns false if the first letter is not uppercase', () => {
+    const result = isValidFirstLetter('hello');
+    expect(result).toBe('First letter must be uppercase');
   });
 });
 
-describe('isValidFile', () => {
-  it('should return true if the file is defined', () => {
-    const file = new File([''], 'filename.txt');
-    const result = isValidFile(file);
+describe('validateDate', () => {
+  it('returns true if the date is today or earlier', () => {
+    const today = new Date().toISOString().split('T')[0];
+    const result = validateDate(today);
     expect(result).toBe(true);
   });
 
-  it('should return false if the file is undefined', () => {
-    const result = isValidFile(undefined);
-    expect(result).toBe(false);
-  });
-});
-
-describe('isErrorName', () => {
-  it('should return false if the name is valid', () => {
-    const result = isErrorName('John Doe');
-    expect(result).toBe(false);
-  });
-
-  it('should return true if the name is empty', () => {
-    const result = isErrorName('');
-    expect(result).toBe(true);
-  });
-
-  it('should return true if the name is too short', () => {
-    const result = isErrorName('A');
-    expect(result).toBe(true);
-  });
-});
-
-describe('isErrorDate', () => {
-  it('should return false if the date is before today', () => {
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-    const result = isErrorDate(yesterday);
-    expect(result).toBe(false);
-  });
-
-  it('should return true if the date is after today', () => {
+  it('returns false if the date is later than today', () => {
     const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-    const result = isErrorDate(tomorrow);
-    expect(result).toBe(true);
-  });
-
-  it('should return true if the date is empty', () => {
-    const result = isErrorDate('');
-    expect(result).toBe(true);
+    const result = validateDate(tomorrow);
+    expect(result).toBe('Select a date no later than today');
   });
 });

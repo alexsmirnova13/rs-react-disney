@@ -33,7 +33,7 @@ const OneCard = (props: ICardProps) => {
   const isoDateString = props.card.attributes.createdAt;
   const date = new Date(Date.parse(isoDateString));
   return (
-    <StyledCard data-testid="card" onClick={props.onClick}>
+    <StyledCard role="card" data-testid="card" onClick={props.onClick}>
       <img
         src={
           props.card.attributes.posterImage?.large ||

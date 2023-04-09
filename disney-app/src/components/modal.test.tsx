@@ -1,9 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import OneCard from './oneCard';
-import { IAnime } from 'data/HPResponse.models';
+import Modal from './modal';
 
-const item: IAnime = {
+const currentCard = {
   attributes: {
     canonicalTitle: 'test1',
     ageRating: 'test1',
@@ -28,17 +27,12 @@ const item: IAnime = {
   },
   id: 'test1',
 };
-
-describe('Card tests:', () => {
+describe('Modal tests:', () => {
   beforeEach(() => {
-    render(<OneCard card={item} key={item.id} onClick={() => 'da'} />);
+    render(<Modal onClose={() => 'da'} card={currentCard} />);
   });
 
-  it('card mounted', () => {
-    expect(screen.getByTestId('card')).toBeInTheDocument();
-  });
-
-  it('card has title "test card title"', () => {
-    expect(screen.getByText(item.attributes.canonicalTitle)).toBeInTheDocument();
+  it('modal panel mounted', () => {
+    expect(screen.getByTestId('modal')).toBeInTheDocument();
   });
 });

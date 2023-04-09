@@ -1,191 +1,79 @@
-// import React from 'react';
-// import { render, screen, waitFor } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
-// import axios from 'axios';
-// import HomePage from './HomePage';
+import React from 'react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import axios from 'axios';
+import HomePage from './HomePage';
 
-// describe('Card tests:', () => {
-//   render(<HomePage />);
+jest.mock('axios');
+const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockData = {
+  data: [
+    {
+      attributes: {
+        canonicalTitle: 'test',
+        ageRating: 'test',
+        posterImage: {
+          large: 'test',
+          small: 'test',
+          tiny: 'test',
+        },
+        createdAt: 'test',
+        description: 'test',
+        endDate: 'test',
+        episodeCount: 2,
+        episodeLength: 2,
+        favoritesCount: 2,
+        popularityRank: 2,
+        status: 'test',
+        synopsis: 'test',
+        titles: {
+          en: 'test',
+          en_jp: 'test',
+        },
+      },
+      id: 'test',
+    },
+    {
+      attributes: {
+        canonicalTitle: 'test1',
+        ageRating: 'test1',
+        posterImage: {
+          large: 'test1',
+          small: 'test1',
+          tiny: 'test1',
+        },
+        createdAt: 'test1',
+        description: 'test1',
+        endDate: 'test1',
+        episodeCount: 1,
+        episodeLength: 1,
+        favoritesCount: 1,
+        popularityRank: 1,
+        status: 'test1',
+        synopsis: 'test1',
+        titles: {
+          en: 'test1',
+          en_jp: 'test1',
+        },
+      },
+      id: 'test1',
+    },
+  ],
+};
+beforeAll(() => {
+  mockedAxios.get.mockResolvedValue(mockData);
+});
+describe('HomePage', () => {
+  it('renders AllCards component after data is loaded', async () => {
+    mockedAxios.get.mockResolvedValue({ data: mockData });
+    render(<HomePage />);
+    await waitForElementToBeRemoved(() => screen.queryByTestId('loader'));
+    expect(screen.getAllByRole('card')).toHaveLength(2);
+  });
 
-//   it('home-page component mounted', () => {
-//     expect(screen.getByTestId('home-page')).toBeInTheDocument();
-//   });
-// });
-
-// jest.mock('axios');
-
-// const mockData = {
-//   data: [
-//     {
-//       id: '1',
-//       attributes: {
-//         canonicalTitle: 'Anime 1',
-//         posterImage: {
-//           small: 'http://example.com/anime1.jpg',
-//         },
-//       },
-//     },
-//     {
-//       id: '2',
-//       attributes: {
-//         canonicalTitle: 'Anime 2',
-//         posterImage: {
-//           small: 'http://example.com/anime2.jpg',
-//         },
-//       },
-//     },
-//   ],
-// };
-
-// describe('HomePage', () => {
-//   beforeEach(() => {
-//     axios.get.mockResolvedValue({ data: { data: [] } });
-//   });
-
-//   afterEach(() => {
-//     jest.resetAllMocks();
-//   });
-
-//   it('should render search panel, loader, and all cards', async () => {
-//     axios.get.mockResolvedValueOnce({ data: mockData });
-//     render(<HomePage />);
-
-//     expect(screen.getByRole('textbox')).toBeInTheDocument();
-//     expect(screen.getByRole('button', { name: /search/i })).toBeInTheDocument();
-
-//     expect(screen.getByRole('status')).toBeInTheDocument();
-
-//     await waitFor(() => {
-//       expect(screen.getAllByRole('img')).toHaveLength(2);
-//       expect(screen.getAllByRole('heading')).toHaveLength(2);
-//     });
-//   });
-
-//   it('should render modal after clicking on card', async () => {
-//     axios.get.mockResolvedValueOnce({ data: mockData });
-//     render(<HomePage />);
-
-//     await waitFor(() => {
-//       expect(screen.getAllByRole('img')).toHaveLength(2);
-//       expect(screen.getAllByRole('heading')).toHaveLength(2);
-//     });
-
-//     userEvent.click(screen.getAllByRole('button', { name: /details/i })[0]);
-
-//     expect(screen.getByRole('dialog')).toBeInTheDocument();
-//     expect(screen.getByRole('heading', { name: /anime 1/i })).toBeInTheDocument();
-//   });
-
-//   it('should update search results after submitting a search term', async () => {
-//     axios.get.mockResolvedValueOnce({ data: mockData });
-//     render(<HomePage />);
-
-//     userEvent.type(screen.getByRole('textbox'), 'anime 1');
-//     userEvent.click(screen.getByRole('button', { name: /search/i }));
-
-//     expect(axios.get).toHaveBeenCalledWith('https://kitsu.io/api/edge/anime', {
-//       params: {
-//         'page[limit]': 10,
-//         'page[offset]': 0,
-//         'filter[text]': 'anime%201',
-//       },
-//     });
-
-//     await waitFor(() => {
-//       expect(screen.getAllByRole('img')).toHaveLength(1);
-//       expect(screen.getAllByRole('heading')).toHaveLength(1);
-//       expect(screen.getByRole('heading', { name: /anime 1/i })).toBeInTheDocument();
-//     });
-//   });
-// });
-
-// import { render, screen, waitFor } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
-// import axios from 'axios';
-// import HomePage from './HomePage';
-// import React from 'react';
-
-// jest.mock('axios');
-// const mockedAxios = axios as jest.Mocked<typeof axios>;
-// const mockData = {
-//   data: [
-//     {
-//       id: '1',
-//       attributes: {
-//         canonicalTitle: 'Anime 1',
-//         posterImage: {
-//           small: 'http://example.com/anime1.jpg',
-//         },
-//       },
-//     },
-//     {
-//       id: '2',
-//       attributes: {
-//         canonicalTitle: 'Anime 2',
-//         posterImage: {
-//           small: 'http://example.com/anime2.jpg',
-//         },
-//       },
-//     },
-//   ],
-// };
-
-// describe('HomePage', () => {
-//   beforeEach(() => {
-//     mockedAxios.get.mockResolvedValue({ data: { data: [] } });
-//   });
-
-//   afterEach(() => {
-//     jest.resetAllMocks();
-//   });
-
-//   it('should render search panel, loader, and all cards', async () => {
-//     mockedAxios.get.mockResolvedValue({ data: mockData });
-//     render(<HomePage />);
-//     expect(screen.getByRole('textbox')).toBeInTheDocument();
-//     expect(screen.getByRole('button', { name: /search/i })).toBeInTheDocument();
-
-//     expect(screen.getByRole('status')).toBeInTheDocument();
-
-//     await waitFor(() => {
-//       expect(screen.getAllByRole('img')).toHaveLength(2);
-//       expect(screen.getAllByRole('heading')).toHaveLength(2);
-//     });
-//   });
-
-//   it('should render modal after clicking on card', async () => {
-//     mockedAxios.get.mockResolvedValue({ data: mockData });
-//     render(<HomePage />);
-//     await waitFor(() => {
-//       expect(screen.getAllByRole('img')).toHaveLength(2);
-//       expect(screen.getAllByRole('heading')).toHaveLength(2);
-//     });
-
-//     userEvent.click(screen.getAllByRole('button', { name: /details/i })[0]);
-
-//     expect(screen.getByRole('dialog')).toBeInTheDocument();
-//     expect(screen.getByRole('heading', { name: /anime 1/i })).toBeInTheDocument();
-//   });
-
-//   it('should update search results after submitting a search term', async () => {
-//     mockedAxios.get.mockResolvedValue({ data: mockData });
-//     render(<HomePage />);
-//     userEvent.type(screen.getByRole('textbox'), 'anime 1');
-//     userEvent.click(screen.getByRole('button', { name: /search/i }));
-
-//     expect(axios.get).toHaveBeenCalledWith('https://kitsu.io/api/edge/anime', {
-//       params: {
-//         'page[limit]': 10,
-//         'page[offset]': 0,
-//         'filter[text]': 'anime%201',
-//       },
-//     });
-
-//     await waitFor(() => {
-//       expect(screen.getAllByRole('img')).toHaveLength(1);
-//       expect(screen.getAllByRole('heading')).toHaveLength(1);
-//       expect(screen.getByRole('heading', { name: /anime 1/i })).toBeInTheDocument();
-//     });
-//   });
-// });
-
+  it('renders error', async () => {
+    mockedAxios.get.mockResolvedValue({ data: { data: [] } });
+    render(<HomePage />);
+    await waitForElementToBeRemoved(() => screen.queryByTestId('loader'));
+    expect(screen.getByTestId('error')).toBeInTheDocument();
+  });
+});

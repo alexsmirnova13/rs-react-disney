@@ -1,45 +1,44 @@
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import AllCards from './AllCards';
+import React from 'react';
+import { render } from '@testing-library/react';
+import AllCards from './AllCards';
 
-// describe('AllCards component', () => {
-//   const cards = [
-//     {
-//       id: '9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8',
-//       name: 'Harry Potter',
-//       alternate_names: ['The Boy Who Lived', 'The Chosen One'],
-//       species: 'human',
-//       gender: 'male',
-//       house: 'Gryffindor',
-//       dateOfBirth: '31-07-1980',
-//       yearOfBirth: 1980,
-//       wizard: true,
-//       ancestry: 'half-blood',
-//       eyeColour: 'green',
-//       hairColour: 'black',
-//       wand: {
-//         wood: 'holly',
-//         core: 'phoenix feather',
-//         length: 11,
-//       },
-//       patronus: 'stag',
-//       hogwartsStudent: true,
-//       hogwartsStaff: false,
-//       actor: 'Daniel Radcliffe',
-//       alternate_actors: [],
-//       alive: true,
-//       image: 'https://ik.imagekit.io/hpapi/harry.jpg',
-//     },
-//   ];
-//   it('renders without crashing', () => {
-//     render(<AllCards cards={[]} />);
-//   });
+describe('AllCards component', () => {
+  const cards = [
+    {
+      attributes: {
+        canonicalTitle: 'test1',
+        ageRating: 'test1',
+        posterImage: {
+          large: 'test1',
+          small: 'test1',
+          tiny: 'test1',
+        },
+        createdAt: 'test1',
+        description: 'test1',
+        endDate: 'test1',
+        episodeCount: 1,
+        episodeLength: 1,
+        favoritesCount: 1,
+        popularityRank: 1,
+        status: 'test1',
+        synopsis: 'test1',
+        titles: {
+          en: 'test1',
+          en_jp: 'test1',
+        },
+      },
+      id: 'test1',
+    },
+  ];
+  it('renders without crashing', () => {
+    render(<AllCards cards={[]} handleParentClick={() => 'da'} />);
+  });
 
-//   it('passes correct props to OneCard component', () => {
-//     const { container } = render(<AllCards cards={cards} />);
-//     const oneCardComponents = container.querySelectorAll('.one-card');
-//     oneCardComponents.forEach((node, i) => {
-//       expect(node).toHaveAttribute('card', JSON.stringify(cards[i]));
-//     });
-//   });
-// });
+  it('passes correct props to OneCard component', () => {
+    const { container } = render(<AllCards cards={[]} handleParentClick={() => 'da'} />);
+    const oneCardComponents = container.querySelectorAll('.one-card');
+    oneCardComponents.forEach((node, i) => {
+      expect(node).toHaveAttribute('card', JSON.stringify(cards[i]));
+    });
+  });
+});

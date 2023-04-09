@@ -18,8 +18,6 @@ export interface IWand {
   length: number | null;
 }
 
-// type Tgender = 'male' | 'female';
-
 export interface INewHero {
   name: string | undefined;
   dateOfBirth: string | undefined;

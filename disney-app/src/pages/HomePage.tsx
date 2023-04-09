@@ -2,55 +2,39 @@ import SearchPanel from 'components/searchPanel';
 import AllCards from 'containers/AllCards';
 import { IAnime } from 'data/HPResponse.models';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Modal from 'components/modal';
 import { Global, css } from '@emotion/react';
 import Loader from 'components/loader';
-import styled from '@emotion/styled';
+import loadData from 'utils/api';
 
-const StyledLoading = styled.div`
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
-`;
 const HomePage = () => {
   const [cards, setCards] = useState<IAnime[]>();
   const [searchRes, setSearchRes] = useState<string>('');
   const [showModal, setShowModal] = useState(false);
   const [currentCard, setCurrentCard] = useState<IAnime | undefined>(undefined);
+  const [isLoad, setIsLoad] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const getData = async (searchStr: string) => {
+    setIsLoad(true);
+    const result = await loadData(searchStr);
+    result ? setCards(result) : setIsError(true);
+    setIsLoad(false);
+  };
+
   useEffect(() => {
-    const loadData = async () => {
-      const response = await axios.get('https://kitsu.io/api/edge/anime', {
-        params: {
-          'page[limit]': 10,
-          'page[offset]': 0,
-          'filter[text]': searchRes || undefined,
-        },
-      });
-      setCards(response.data.data);
-      console.log(response.data.data);
-    };
-    loadData();
+    getData(searchRes);
   }, [searchRes]);
-  if (!cards) {
-    return (
-      <StyledLoading>
-        <Loader />;
-      </StyledLoading>
-    );
-  }
+
   const handleSubmit = (res: string) => {
     const result = res.replace(/ /g, '%20');
     setSearchRes(result);
   };
   const handleParentClick = (id: string) => {
-    const card = cards.filter((item) => item.id === id);
+    const card = cards?.filter((item) => item.id === id);
     setShowModal(true);
-    setCurrentCard(card[0]);
+    if (card) {
+      setCurrentCard(card[0]);
+    }
   };
 
   const handleCloseModal = () => {
@@ -68,7 +52,13 @@ const HomePage = () => {
         `}
       />
       <SearchPanel onParentEnter={handleSubmit} />
-      <AllCards cards={cards} handleParentClick={handleParentClick} />;
+      {isLoad ? (
+        <Loader />
+      ) : isError ? (
+        <p data-testid="error">alo</p>
+      ) : (
+        cards && <AllCards cards={cards} handleParentClick={handleParentClick} />
+      )}
       {showModal && currentCard && <Modal onClose={handleCloseModal} card={currentCard} />}
     </div>
   );

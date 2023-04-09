@@ -19,7 +19,7 @@ interface IAllNewCardsProps {
 const AllNewCards = (props: IAllNewCardsProps) => {
   const cards = props.newCards;
   return (
-    <StyledCards>
+    <StyledCards data-testid="allNewCardsComponent">
       {cards.map((item) => (
         <OneNewCard card={item} key={item.id} />
       ))}

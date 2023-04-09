@@ -71,7 +71,7 @@ const StyledLoader = styled.div`
 `;
 const Loader = () => {
   return (
-    <StyledLoader>
+    <StyledLoader data-testid="loader">
       <span>L</span>
       <span>O</span>
       <span>A</span>
