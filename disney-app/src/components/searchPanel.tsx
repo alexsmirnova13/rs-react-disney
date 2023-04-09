@@ -9,12 +9,18 @@ const StyledSearchBar = styled.form`
     padding: 6px 0 4px 10px;
     border: 1px solid #cecece;
     background: #f6f6f6;
-    border-radius: 8px;
+    // border-radius: 8px;
     margin: 20px auto 30px auto;
   }
+  input:focus {
+    box-shadow: 0 0 5px;
+    outline: none;
+  }
 `;
-
-const SearchPanel = () => {
+interface ISearchEnterProps {
+  onParentEnter: (res: string) => void;
+}
+const SearchPanel = ({ onParentEnter }: ISearchEnterProps) => {
   const [inputValue, setInputValue] = useState(localStorage.getItem('value') || '');
   const searchRef = useRef('');
 
@@ -31,6 +37,15 @@ const SearchPanel = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const target = e.target as HTMLInputElement;
+      localStorage.setItem('value', searchRef.current);
+      onParentEnter(target.value);
+    }
+  };
   return (
     <StyledSearchBar data-testid="search">
       <input
@@ -38,6 +53,7 @@ const SearchPanel = () => {
         placeholder="Search"
         value={inputValue}
         onChange={handleInputChange}
+        onKeyDown={handleKeyPress}
       />
     </StyledSearchBar>
   );

@@ -1,5 +1,5 @@
 import { FormValues, IFormComponentProps } from 'data/HPResponse.models';
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { StyledForm } from './formComponentStyle';
 import { useForm } from 'react-hook-form';
 import { pass_gen } from 'utils/functions';
@@ -11,7 +11,6 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
     handleSubmit,
     reset,
     formState: { errors },
-    setValue,
   } = useForm<FormValues>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -20,15 +19,10 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
       inputDate: '',
       radioGender: '',
       house: '',
-      isWizard: false,
       fileInput: undefined,
       inputCheckbox: false,
     },
   });
-
-  const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue('isWizard', event.target.checked);
-  };
   const onSubmit = (e: FormValues) => {
     const file = e.fileInput;
     onParentSubmit({
@@ -46,7 +40,7 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <label className="label">
-        Hero name:
+        Anime name:
         <input
           className="input-name"
           placeholder="New hero name"
@@ -60,7 +54,7 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
         <p className="error">{errors.inputName?.message}</p>
       </label>
       <label className="label" htmlFor="date-input">
-        Select a date:
+        Date of creation:
         <input
           type="date"
           className="input-select"
@@ -72,18 +66,8 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
         />
         <p className="error">{errors.inputDate?.message}</p>
       </label>
-      <label className="label" htmlFor="checkbox-input">
-        Is the hero a wizard?
-        <input
-          type="checkbox"
-          id="checkbox-input"
-          value="false"
-          {...register('isWizard')}
-          onChange={handleCheckboxChange}
-        />
-      </label>
       <label className="label" htmlFor="select-input">
-        Choose your House:
+        Choose language:
         <select
           id="select-input"
           className="input-select"
@@ -93,29 +77,29 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
           <option value="" disabled>
             choose option
           </option>
-          <option value="Gryffindor">Gryffindor</option>
-          <option value="Ravenclaw">Ravenclaw</option>
-          <option value="Hufflepuff">Hufflepuff</option>
-          <option value="Slytherin">Slytherin</option>
-          <option value="none">none</option>
+          <option value="English">English</option>
+          <option value="Korean">Korean</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Japanese">Japanese</option>
+          <option value="other">other</option>
         </select>
         <p className="error">{errors.house?.message}</p>
       </label>
       <label className="label">
-        Choose hero gender:
+        Status:
         <label>
-          male
+          finished
           <input
             type="radio"
-            value="male"
+            value="finished"
             {...register('radioGender', { required: 'Field is required' })}
           />
         </label>
         <label>
-          female
+          unfinished
           <input
             type="radio"
-            value="female"
+            value="unfinished"
             {...register('radioGender', { required: 'Field is required' })}
           />
         </label>
@@ -132,7 +116,7 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
         {errors.fileInput?.type === 'required' && <p className="error">This field is required</p>}
       </label>
       <label className="label">
-        Press it, or there will be no magic:
+        All data correct
         <input
           type="checkbox"
           {...register('inputCheckbox', {

@@ -10,7 +10,7 @@ const StyledHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   img {
-    height: 75px;
+    height: 150px;
   }
 `;
 
@@ -18,10 +18,9 @@ const Header = () => {
   return (
     <StyledHeader data-testid="header">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/700px-Disney_wordmark.svg.png?20171113041617"
-        alt="disney-logo"
+        src="https://image.spreadshirtmedia.net/image-server/v1/designs/184158337,width=178,height=178.png"
+        alt="anime-logo"
       />
-      {/* <SearchPanel /> */}
       <Navbar />
     </StyledHeader>
   );

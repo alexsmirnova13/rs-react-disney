@@ -1,24 +1,15 @@
 export interface IHero {
-  id: string;
-  name: string;
-  alternate_names: string[];
-  species: string;
+  birth: string;
+  death: string;
   gender: string;
-  house: string;
-  dateOfBirth: string | null;
-  yearOfBirth: number | null;
-  wizard: boolean;
-  ancestry: string;
-  eyeColour: string;
-  hairColour: string;
-  wand: IWand;
-  patronus: string;
-  hogwartsStudent: boolean;
-  hogwartsStaff: boolean;
-  actor: string;
-  alternate_actors: string[];
-  alive: boolean;
-  image: string;
+  hair: string;
+  height: string;
+  name: string;
+  race: string;
+  realm: string;
+  spouse: string;
+  wikiUrl: string;
+  _id: string;
 }
 
 export interface IWand {
@@ -53,3 +44,28 @@ export type FormValues = {
   fileInput: FileList | undefined;
   inputCheckbox: boolean;
 };
+export interface IAnime {
+  attributes: {
+    canonicalTitle: string;
+    ageRating: string;
+    posterImage: {
+      large: string;
+      small: string;
+      tiny: string;
+    };
+    createdAt: string;
+    description: string;
+    endDate: string;
+    episodeCount: number;
+    episodeLength: number;
+    favoritesCount: number;
+    popularityRank: number;
+    status: string;
+    synopsis: string;
+    titles: {
+      en: string;
+      en_jp: string;
+    };
+  };
+  id: string;
+}

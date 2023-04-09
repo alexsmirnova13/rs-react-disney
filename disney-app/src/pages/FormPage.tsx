@@ -37,7 +37,7 @@ const FormPage = () => {
   };
   return (
     <StyledFormPage>
-      <h1>Make a new HP hero</h1>
+      <h1>Make a new anime</h1>
       <div className="form">
         <FormComponent onParentSubmit={handleSubmit} />
         {messageSuccess && <Message message={messageSuccess} />}

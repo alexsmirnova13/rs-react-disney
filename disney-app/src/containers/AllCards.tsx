@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import OneCard from 'components/oneCard';
-import { IHero } from 'data/HPResponse.models';
+import { IAnime } from 'data/HPResponse.models';
 
 const StyledCards = styled.div`
   justify-content: center;
@@ -13,15 +13,17 @@ const StyledCards = styled.div`
   margin-bottom: 30px;
 `;
 interface IAllCardsProps {
-  cards: IHero[];
+  cards: IAnime[];
+  handleParentClick: (id: string) => void;
 }
 
 const AllCards = (props: IAllCardsProps) => {
   const cards = props.cards;
+
   return (
     <StyledCards>
       {cards.map((item) => (
-        <OneCard card={item} key={item.id} />
+        <OneCard card={item} key={item.id} onClick={() => props.handleParentClick(item.id)} />
       ))}
     </StyledCards>
   );

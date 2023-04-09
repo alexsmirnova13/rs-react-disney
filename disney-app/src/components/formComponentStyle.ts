@@ -5,7 +5,6 @@ export const StyledForm = styled.form`
   flex-direction: column;
   justify-content: start;
   box-shadow: 0 0 5px;
-  border-radius: 20px;
   padding: 10px;
   background-color: #c0d5d55c;
   .button {

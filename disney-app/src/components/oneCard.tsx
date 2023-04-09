@@ -1,39 +1,52 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { IHero } from 'data/HPResponse.models';
+import { IAnime } from 'data/HPResponse.models';
 
 const StyledCard = styled.div`
-  box-shadow: 0 0 5px;
-  width: 230px;
-  border-radius: 20px;
+  width: 260px;
   padding: 10px;
   background-color: #c0d5d55c;
   padding-bottom: 20px;
+  border: 1px solid grey;
   img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5px;
     margin-bottom: 20px;
-    width: 160px;
-    border-radius: 20px;
+    width: 80%;
+  }
+  :hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 5px;
+    border-color: #c0d5d55c;
   }
 `;
 
 interface ICardProps {
-  card: IHero;
+  card: IAnime;
+  onClick: () => void;
 }
 const OneCard = (props: ICardProps) => {
+  const isoDateString = props.card.attributes.createdAt;
+  const date = new Date(Date.parse(isoDateString));
   return (
-    <StyledCard data-testid="card">
-      <img src={props.card.image} />
+    <StyledCard data-testid="card" onClick={props.onClick}>
+      <img
+        src={
+          props.card.attributes.posterImage?.large ||
+          'https://upload.wikimedia.org/wikipedia/commons/7/75/No_image_available.png?20161129022009'
+        }
+      />
       <h3>
-        <b>{props.card.name}</b>
+        <b>{props.card.attributes.canonicalTitle}</b>
       </h3>
-      <p>House: {props.card.house}</p>
-      <p>Eye color: {props.card.eyeColour}</p>
-      <p>Date Of Birth: {props.card.dateOfBirth}</p>
-      <p>Patronus: {props.card.patronus}</p>
+      <p>createdAt: {date.toLocaleString()}</p>
+      <p>popularityRank: {props.card.attributes.popularityRank}</p>
+      <p>episodeLength: {props.card.attributes.episodeLength}</p>
+      {/* <p>{props.card.attributes.canonicalTitle}</p> */}
     </StyledCard>
   );
 };
