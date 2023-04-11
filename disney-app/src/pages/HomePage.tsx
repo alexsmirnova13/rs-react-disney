@@ -9,7 +9,7 @@ import loadData from 'utils/api';
 
 const HomePage = () => {
   const [cards, setCards] = useState<IAnime[]>();
-  const [searchRes, setSearchRes] = useState<string>('');
+  const [searchRes, setSearchRes] = useState<string>(localStorage.getItem('value') || '');
   const [showModal, setShowModal] = useState(false);
   const [currentCard, setCurrentCard] = useState<IAnime | undefined>(undefined);
   const [isLoad, setIsLoad] = useState(false);
