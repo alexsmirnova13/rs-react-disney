@@ -68,7 +68,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^7.0.4",
-    "jest": "^27.5.1",
+    "jest": "^29.5.0",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "react-test-renderer": "^18.2.0",
@@ -81,6 +81,8 @@
       "src/**/*.tsx",
       "!**/node_modules/**"
     ],
-    "transformIgnorePatterns": ["node_modules/(?!axios)/"]
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)/"
+    ]
   }
 }
