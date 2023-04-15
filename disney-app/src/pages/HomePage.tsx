@@ -1,36 +1,28 @@
 import SearchPanel from 'components/searchPanel';
 import AllCards from 'containers/AllCards';
 import { IAnime } from 'data/HPResponse.models';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Modal from 'components/modal';
 import { Global, css } from '@emotion/react';
 import Loader from 'components/loader';
-import loadData from 'utils/api';
+import { selectSearchStr, setSearchStr } from 'redux/searchStrSlice';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
+import { useGetAnimeQuery } from 'utils/animeApi';
 
 const HomePage = () => {
-  const [cards, setCards] = useState<IAnime[]>();
-  const [searchRes, setSearchRes] = useState<string>(localStorage.getItem('value') || '');
   const [showModal, setShowModal] = useState(false);
   const [currentCard, setCurrentCard] = useState<IAnime | undefined>(undefined);
-  const [isLoad, setIsLoad] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const getData = async (searchStr: string) => {
-    setIsLoad(true);
-    const result = await loadData(searchStr);
-    result ? setCards(result) : setIsError(true);
-    setIsLoad(false);
-  };
-
-  useEffect(() => {
-    getData(searchRes);
-  }, [searchRes]);
+  const searchStr = useAppSelector(selectSearchStr);
+  const dispatch = useAppDispatch();
+  const { data, error, isLoading } = useGetAnimeQuery(searchStr);
+  console.log(data);
 
   const handleSubmit = (res: string) => {
     const result = res.replace(/ /g, '%20');
-    setSearchRes(result);
+    dispatch(setSearchStr(result));
   };
   const handleParentClick = (id: string) => {
-    const card = cards?.filter((item) => item.id === id);
+    const card = data?.filter((item) => item.id === id);
     setShowModal(true);
     if (card) {
       setCurrentCard(card[0]);
@@ -52,12 +44,12 @@ const HomePage = () => {
         `}
       />
       <SearchPanel onParentEnter={handleSubmit} />
-      {isLoad ? (
+      {isLoading ? (
         <Loader />
-      ) : isError ? (
-        <p data-testid="error">alo</p>
+      ) : error || data?.length === 0 ? (
+        <p data-testid="error">Поиск ничего не нашёл</p>
       ) : (
-        cards && <AllCards cards={cards} handleParentClick={handleParentClick} />
+        data && <AllCards cards={data} handleParentClick={handleParentClick} />
       )}
       {showModal && currentCard && <Modal onClose={handleCloseModal} card={currentCard} />}
     </div>

@@ -4,6 +4,8 @@ import Message from 'components/notification';
 import AllNewCards from 'containers/AllNewCards';
 import { INewHero } from 'data/HPResponse.models';
 import React, { useState } from 'react';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
+import { selectNewItems, setNewItems } from 'redux/newItemsSlice';
 
 const StyledFormPage = styled.div`
   margin-left: auto;
@@ -26,10 +28,11 @@ const StyledFormPage = styled.div`
 `;
 
 const FormPage = () => {
-  const [newCards, setNewCards] = useState<INewHero[]>([]);
   const [messageSuccess, setMessageSuccess] = useState('');
+  const dispatch = useAppDispatch();
+  const newCards = useAppSelector(selectNewItems);
   const handleSubmit = (res: INewHero) => {
-    setNewCards([...newCards, res]);
+    dispatch(setNewItems(res));
     setMessageSuccess('Success');
     setTimeout(() => {
       setMessageSuccess('');
