@@ -1,79 +1,41 @@
+import { testData } from 'utils/server';
 import React from 'react';
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
-import axios from 'axios';
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
+import { fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { setupStore } from 'redux/store';
 import HomePage from './HomePage';
 
-jest.mock('axios');
-const mockedAxios = axios as jest.Mocked<typeof axios>;
-const mockData = {
-  data: [
-    {
-      attributes: {
-        canonicalTitle: 'test',
-        ageRating: 'test',
-        posterImage: {
-          large: 'test',
-          small: 'test',
-          tiny: 'test',
-        },
-        createdAt: 'test',
-        description: 'test',
-        endDate: 'test',
-        episodeCount: 2,
-        episodeLength: 2,
-        favoritesCount: 2,
-        popularityRank: 2,
-        status: 'test',
-        synopsis: 'test',
-        titles: {
-          en: 'test',
-          en_jp: 'test',
-        },
-      },
-      id: 'test',
-    },
-    {
-      attributes: {
-        canonicalTitle: 'test1',
-        ageRating: 'test1',
-        posterImage: {
-          large: 'test1',
-          small: 'test1',
-          tiny: 'test1',
-        },
-        createdAt: 'test1',
-        description: 'test1',
-        endDate: 'test1',
-        episodeCount: 1,
-        episodeLength: 1,
-        favoritesCount: 1,
-        popularityRank: 1,
-        status: 'test1',
-        synopsis: 'test1',
-        titles: {
-          en: 'test1',
-          en_jp: 'test1',
-        },
-      },
-      id: 'test1',
-    },
-  ],
-};
-beforeAll(() => {
-  mockedAxios.get.mockResolvedValue(mockData);
-});
-describe('HomePage', () => {
-  it('renders AllCards component after data is loaded', async () => {
-    mockedAxios.get.mockResolvedValue({ data: mockData });
-    render(<HomePage />);
-    await waitForElementToBeRemoved(() => screen.queryByTestId('loader'));
-    expect(screen.getAllByRole('card')).toHaveLength(2);
-  });
+export const handlers = [
+  rest.get('https://kitsu.io/api/edge/anime/', (req, res, ctx) => {
+    return res(ctx.json(testData), ctx.delay(150));
+  }),
+];
 
-  it('renders error', async () => {
-    mockedAxios.get.mockResolvedValue({ data: { data: [] } });
-    render(<HomePage />);
-    await waitForElementToBeRemoved(() => screen.queryByTestId('loader'));
-    expect(screen.getByTestId('error')).toBeInTheDocument();
+const server = setupServer(...handlers);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+const store = setupStore({});
+
+describe('API-calls test', () => {
+  it('return king', async () => {
+    render(
+      <Provider store={store}>
+        <HomePage />
+      </Provider>
+    );
+    await waitForElementToBeRemoved(() => screen.getByTestId('loader'));
+    const king = screen.getByText('king');
+    expect(king).toBeInTheDocument();
+    fireEvent.click(king);
+    const modal = screen.getByTestId('modal');
+    expect(modal).toBeInTheDocument();
+    const closeModalButton = screen.getByTestId('modal-close');
+    fireEvent.click(closeModalButton);
+    expect(modal).not.toBeInTheDocument();
   });
 });

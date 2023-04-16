@@ -23,7 +23,6 @@ interface IOneNewCardProps {
 
 const OneNewCard = (props: IOneNewCardProps) => {
   const image = props.card.image;
-  const imageUrl = URL.createObjectURL(image as File);
   return (
     <StyledCard data-testid="new-card">
       <h3>
@@ -32,7 +31,7 @@ const OneNewCard = (props: IOneNewCardProps) => {
       <p>Date of creation: {props.card.dateOfBirth}</p>
       <p>Language: {props.card.house}</p>
       <p>Status: {props.card.gender}</p>
-      <img src={imageUrl} alt="newHero" />
+      <img src={image} alt="newHero" />
     </StyledCard>
   );
 };

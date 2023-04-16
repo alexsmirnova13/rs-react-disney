@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { INewHero } from 'data/HPResponse.models';
 import OneNewCard from './oneNewCard';
-import mySvg from './../assets/images/rs-school-logo.svg';
 
 const item: INewHero = {
   name: 'Test',
@@ -10,9 +9,7 @@ const item: INewHero = {
   wizard: true,
   house: 'Gryffindor',
   gender: 'male',
-  image: new File([new Blob([mySvg], { type: 'image/svg+xml' })], 'test_image.jpg', {
-    type: 'image/jpeg',
-  }),
+  image: 'https://rs.school/images/rs_school-og.png',
   checked: true,
   id: 'dsfsdfsfsdf',
 };

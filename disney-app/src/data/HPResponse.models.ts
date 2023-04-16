@@ -24,7 +24,7 @@ export interface INewHero {
   wizard: boolean | undefined;
   house: string | undefined;
   gender: string;
-  image: File | undefined;
+  image: string | undefined;
   checked: boolean | undefined;
   id: string;
 }

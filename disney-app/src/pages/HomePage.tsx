@@ -15,8 +15,6 @@ const HomePage = () => {
   const searchStr = useAppSelector(selectSearchStr);
   const dispatch = useAppDispatch();
   const { data, error, isLoading } = useGetAnimeQuery(searchStr);
-  console.log(data);
-
   const handleSubmit = (res: string) => {
     const result = res.replace(/ /g, '%20');
     dispatch(setSearchStr(result));
@@ -45,7 +43,7 @@ const HomePage = () => {
       />
       <SearchPanel onParentEnter={handleSubmit} />
       {isLoading ? (
-        <Loader />
+        <Loader data-testid="loader" />
       ) : error || data?.length === 0 ? (
         <p data-testid="error">Поиск ничего не нашёл</p>
       ) : (

@@ -67,7 +67,9 @@ const Modal = (props: IModalProps) => {
   return (
     <StyledModal data-testid="modal" onClick={props.onClose}>
       <div className="window" onClick={handleWindowClick}>
-        <button onClick={props.onClose}>x</button>
+        <button data-testid="modal-close" onClick={props.onClose}>
+          x
+        </button>
         <div className="modal-content">
           <img src={props.card.attributes.posterImage.large} />
           <div className="content-text">

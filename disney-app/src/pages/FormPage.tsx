@@ -42,7 +42,7 @@ const FormPage = () => {
     <StyledFormPage>
       <h1>Make a new anime</h1>
       <div className="form">
-        <FormComponent onParentSubmit={handleSubmit} />
+        <FormComponent data-testid="submit-form" onParentSubmit={handleSubmit} />
         {messageSuccess && <Message message={messageSuccess} />}
       </div>
       <AllNewCards newCards={newCards} />

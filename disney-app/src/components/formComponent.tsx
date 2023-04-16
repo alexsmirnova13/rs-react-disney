@@ -31,7 +31,7 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
       gender: e.radioGender,
       house: e.house,
       wizard: e.inputCheckbox,
-      image: file?.[0],
+      image: URL.createObjectURL(file?.[0] as Blob),
       checked: e.inputCheckbox,
       id: pass_gen(),
     });
