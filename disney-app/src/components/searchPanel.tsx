@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
+import { selectSearchStr, setSearchStr } from 'redux/searchStrSlice';
 const StyledSearchBar = styled.form`
   width: 100%;
   input {
@@ -17,32 +19,24 @@ const StyledSearchBar = styled.form`
   }
 `;
 interface ISearchEnterProps {
-  onParentEnter: (res: string) => void;
+  onParentEnter: () => void;
 }
 const SearchPanel = ({ onParentEnter }: ISearchEnterProps) => {
-  const [inputValue, setInputValue] = useState(localStorage.getItem('value') || '');
   const searchRef = useRef('');
-
+  const inputValue = useAppSelector(selectSearchStr);
+  const dispatch = useAppDispatch();
   useEffect(() => {
     searchRef.current = inputValue;
   }, [inputValue]);
 
-  useEffect(() => {
-    return () => {
-      localStorage.setItem('value', searchRef.current);
-    };
-  }, []);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+    dispatch(setSearchStr(e.target.value));
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      const target = e.target as HTMLInputElement;
-      localStorage.setItem('value', searchRef.current);
-      onParentEnter(target.value);
+      onParentEnter();
     }
   };
   return (

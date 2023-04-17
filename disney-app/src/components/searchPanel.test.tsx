@@ -1,10 +1,17 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import SearchPanel from './searchPanel';
+import { Provider } from 'react-redux';
+import { setupStore } from 'redux/store';
 
+const store = setupStore({});
 describe('search panel tests:', () => {
   beforeEach(() => {
-    render(<SearchPanel onParentEnter={() => 'da'} />);
+    render(
+      <Provider store={store}>
+        <SearchPanel onParentEnter={() => 'da'} />
+      </Provider>
+    );
   });
 
   it('search panel mounted', () => {

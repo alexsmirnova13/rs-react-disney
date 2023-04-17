@@ -1,19 +1,9 @@
-import { testData } from 'utils/server';
+import { server } from 'utils/server';
 import React from 'react';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
 import { fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { setupStore } from 'redux/store';
 import HomePage from './HomePage';
-
-export const handlers = [
-  rest.get('https://kitsu.io/api/edge/anime/', (req, res, ctx) => {
-    return res(ctx.json(testData), ctx.delay(150));
-  }),
-];
-
-const server = setupServer(...handlers);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());

@@ -56,12 +56,10 @@ export const testData = {
   ],
 };
 
-export const server = setupServer(
+const handlers = [
   rest.get('https://kitsu.io/api/edge/anime/', (req, res, ctx) => {
-    if (req.url.searchParams.get('filter[text]') === 'king') {
-      return res(ctx.status(200), ctx.json({ results: { data: { testData } } }));
-    } else {
-      return res(ctx.status(400));
-    }
-  })
-);
+    return res(ctx.json(testData), ctx.delay(150));
+  }),
+];
+
+export const server = setupServer(...handlers);

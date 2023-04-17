@@ -9,7 +9,7 @@ export const animeApi = createApi({
         url: `edge/anime/`,
         params: { 'page[limit]': 10, 'page[offset]': 0, 'filter[text]': searchRes || undefined },
       }),
-      transformResponse: (response: { data: IAnime[] }) => {
+      transformResponse: async (response: { data: IAnime[] }) => {
         return response.data;
       },
     }),

@@ -5,19 +5,20 @@ import React, { useState } from 'react';
 import Modal from 'components/modal';
 import { Global, css } from '@emotion/react';
 import Loader from 'components/loader';
-import { selectSearchStr, setSearchStr } from 'redux/searchStrSlice';
-import { useAppDispatch, useAppSelector } from 'redux/hooks';
+import { selectSearchStr } from 'redux/searchStrSlice';
+import { useAppSelector } from 'redux/hooks';
 import { useGetAnimeQuery } from 'utils/animeApi';
 
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [currentCard, setCurrentCard] = useState<IAnime | undefined>(undefined);
   const searchStr = useAppSelector(selectSearchStr);
-  const dispatch = useAppDispatch();
-  const { data, error, isLoading } = useGetAnimeQuery(searchStr);
-  const handleSubmit = (res: string) => {
-    const result = res.replace(/ /g, '%20');
-    dispatch(setSearchStr(result));
+  const [currentSearchStr, setCurrentSearchStr] = useState(searchStr);
+  const { data, error, isFetching } = useGetAnimeQuery(currentSearchStr);
+
+  const handleSubmit = () => {
+    const result = searchStr.replace(/ /g, '%20');
+    setCurrentSearchStr(result);
   };
   const handleParentClick = (id: string) => {
     const card = data?.filter((item) => item.id === id);
@@ -42,7 +43,7 @@ const HomePage = () => {
         `}
       />
       <SearchPanel onParentEnter={handleSubmit} />
-      {isLoading ? (
+      {isFetching ? (
         <Loader data-testid="loader" />
       ) : error || data?.length === 0 ? (
         <p data-testid="error">Поиск ничего не нашёл</p>
