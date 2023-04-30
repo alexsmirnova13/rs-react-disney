@@ -1,5 +1,7 @@
+import { IAnime } from '../data/HPResponse.models';
+
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IAnime } from 'data/HPResponse.models';
+
 export const animeApi = createApi({
   reducerPath: 'animeApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://kitsu.io/api/' }),

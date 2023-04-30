@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { IAnime } from 'data/HPResponse.models';
+
+import { type IAnime } from '../data/HPResponse.models';
 
 const StyledCard = styled.div`
   width: 260px;
@@ -33,7 +33,7 @@ const OneCard = (props: ICardProps) => {
   const isoDateString = props.card.attributes.createdAt;
   const date = new Date(Date.parse(isoDateString));
   return (
-    <StyledCard role="card" data-testid="card" onClick={props.onClick}>
+    <StyledCard role="card" data-testid="card" className="card" onClick={props.onClick}>
       <img
         src={
           props.card.attributes.posterImage?.large ||
@@ -46,7 +46,6 @@ const OneCard = (props: ICardProps) => {
       <p>createdAt: {date.toLocaleString()}</p>
       <p>popularityRank: {props.card.attributes.popularityRank}</p>
       <p>episodeLength: {props.card.attributes.episodeLength}</p>
-      {/* <p>{props.card.attributes.canonicalTitle}</p> */}
     </StyledCard>
   );
 };

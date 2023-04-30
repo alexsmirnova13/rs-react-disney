@@ -1,13 +1,13 @@
-import Footer from 'containers/Footer';
-import Header from 'containers/Header';
-import ErrorPage from 'pages/ErrorPage';
-import AboutPage from 'pages/AboutPage';
-import React from 'react';
-import './App.css';
-import HomePage from 'pages/HomePage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from '@emotion/styled';
-import FormPage from 'pages/FormPage';
+import { Route, Routes } from 'react-router-dom';
+
+import './App.css';
+import Footer from './containers/Footer';
+import Header from './containers/Header';
+import AboutPage from './pages/AboutPage';
+import ErrorPage from './pages/ErrorPage';
+import FormPage from './pages/FormPage';
+import HomePage from './pages/HomePage';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,23 +15,20 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-class App extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/form" element={<FormPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </Wrapper>
-    );
-  }
-}
+
+const App = () => {
+  return (
+    <Wrapper>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/form" element={<FormPage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+      <Footer />
+    </Wrapper>
+  );
+};
 
 export default App;

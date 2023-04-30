@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from './store';
-import { INewHero } from 'data/HPResponse.models';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { type RootState } from './store';
+import { type INewHero } from '../data/HPResponse.models';
 
-interface INewItemsState {
+export interface INewItemsState {
   value: INewHero[];
 }
 

@@ -1,11 +1,12 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
-import FormComponent from 'components/formComponent';
-import Message from 'components/notification';
-import AllNewCards from 'containers/AllNewCards';
-import { INewHero } from 'data/HPResponse.models';
-import React, { useState } from 'react';
-import { useAppDispatch, useAppSelector } from 'redux/hooks';
-import { selectNewItems, setNewItems } from 'redux/newItemsSlice';
+
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { selectNewItems, setNewItems } from '../redux/newItemsSlice';
+import FormComponent from '../components/FormComponent';
+import Message from '../components/Notification';
+import AllNewCards from '../containers/AllNewCards';
+import { INewHero } from '../data/HPResponse.models';
 
 const StyledFormPage = styled.div`
   margin-left: auto;

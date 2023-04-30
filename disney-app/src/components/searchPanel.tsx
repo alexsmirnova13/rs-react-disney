@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
-import { useAppDispatch, useAppSelector } from 'redux/hooks';
-import { selectSearchStr, setSearchStr } from 'redux/searchStrSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { selectSearchStr, setSearchStr } from '../redux/searchStrSlice';
 const StyledSearchBar = styled.form`
   width: 100%;
   input {

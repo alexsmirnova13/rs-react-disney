@@ -33,7 +33,7 @@ export interface IFormComponentProps {
   onParentSubmit: (res: INewHero) => void;
 }
 
-export type FormValues = {
+export interface FormValues {
   inputName: string;
   inputDate: string;
   radioGender: string;
@@ -41,7 +41,7 @@ export type FormValues = {
   isWizard: boolean;
   fileInput: FileList | undefined;
   inputCheckbox: boolean;
-};
+}
 export interface IAnime {
   attributes: {
     canonicalTitle: string;

@@ -37,7 +37,6 @@ export const ErrorPageStyled = styled.div`
     transition: 1s;
   }
   .binoculars {
-    /* animation-name: wiggle; */
     animation-duration: 10s;
     animation-delay: 5s;
     animation-iteration-count: infinite;

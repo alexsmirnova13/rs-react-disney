@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { INewHero } from 'data/HPResponse.models';
+import { type INewHero } from '../data/HPResponse.models';
 
 const StyledCard = styled.div`
   box-shadow: 0 0 5px;

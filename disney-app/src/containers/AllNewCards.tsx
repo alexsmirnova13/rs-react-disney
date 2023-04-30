@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { INewHero } from 'data/HPResponse.models';
-import OneNewCard from 'components/oneNewCard';
+import OneNewCard from '../components/OneNewCard';
+import { INewHero } from '../data/HPResponse.models';
 
 const StyledCards = styled.div`
   justify-content: center;

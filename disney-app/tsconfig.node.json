@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "vite.config.ts",
+    "src/entry-server.tsx",
+    "src/vite-env.d.ts",
+    "cypress.config.ts",
+    "src"
+  ]
+}

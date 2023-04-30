@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import Navbar from 'components/navbar';
-import React from 'react';
+import Navbar from '../components/Navbar';
 
 const StyledHeader = styled.div`
   background-color: teal;

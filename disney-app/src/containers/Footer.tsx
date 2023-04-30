@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from '@emotion/styled';
+
 const StyledFooter = styled.div`
   background-color: teal;
   height: 75px;

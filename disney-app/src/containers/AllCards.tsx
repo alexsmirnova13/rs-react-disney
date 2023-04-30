@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import OneCard from 'components/oneCard';
-import { IAnime } from 'data/HPResponse.models';
+
+import OneCard from '../components/OneCard';
+import { IAnime } from '../data/HPResponse.models';
 
 const StyledCards = styled.div`
   justify-content: center;

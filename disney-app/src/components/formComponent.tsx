@@ -1,9 +1,8 @@
-import { FormValues, IFormComponentProps } from 'data/HPResponse.models';
-import React from 'react';
-import { StyledForm } from './formComponentStyle';
 import { useForm } from 'react-hook-form';
-import { pass_gen } from 'utils/functions';
-import { isValidFirstLetter, validateDate } from 'utils/validation';
+import { pass_gen } from '../utils/functions';
+import { type FormValues, type IFormComponentProps } from '../data/HPResponse.models';
+import { StyledForm } from './FormComponentStyle';
+import { isValidFirstLetter, validateDate } from '../utils/validation';
 
 const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
   const {
@@ -38,7 +37,12 @@ const FormComponent = ({ onParentSubmit }: IFormComponentProps) => {
     reset();
   };
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit(onSubmit)();
+      }}
+    >
       <label className="label">
         Anime name:
         <input

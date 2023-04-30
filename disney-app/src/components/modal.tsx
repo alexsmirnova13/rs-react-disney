@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { IAnime } from 'data/HPResponse.models';
-import React from 'react';
+
+import { type IAnime } from '../data/HPResponse.models';
 
 interface IModalProps {
   onClose: () => void;

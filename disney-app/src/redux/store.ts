@@ -1,7 +1,7 @@
-import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
+import { type PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
 import searchStrReducer from './searchStrSlice';
 import newItemsReducer from './newItemsSlice';
-import { animeApi } from 'utils/animeApi';
+import { animeApi } from '../utils/animeApi';
 
 const rootReducer = combineReducers({
   searchStr: searchStrReducer,
