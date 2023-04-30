@@ -1,293 +1,592 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682886084396" clover="3.2.0">
-  <project timestamp="1682886084397" name="All files">
-    <metrics statements="199" coveredstatements="161" conditionals="42" coveredconditionals="30" methods="65" coveredmethods="44" elements="306" coveredelements="235" complexity="0" loc="199" ncloc="199" packages="7" files="30" classes="30"/>
-    <package name="src">
+<coverage generated="1682896049973" clover="3.2.0">
+  <project timestamp="1682896049974" name="All files">
+    <metrics statements="399" coveredstatements="317" conditionals="84" coveredconditionals="60" methods="130" coveredmethods="85" elements="613" coveredelements="462" complexity="0" loc="399" ncloc="399" packages="13" files="57" classes="57"/>
+    <package name="New folder (2).rs-react-disney.disney-app.src">
+      <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="App.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/App.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="34" count="12" type="stmt"/>
+      </file>
+      <file name="entry-client.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/entry-client.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="New folder (2).rs-react-disney.disney-app.src.components">
+      <metrics statements="78" coveredstatements="58" conditionals="13" coveredconditionals="8" methods="22" coveredmethods="13"/>
+      <file name="formComponent.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/formComponent.tsx">
+        <metrics statements="11" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="140" count="6" type="stmt"/>
+        <line num="142" count="6" type="stmt"/>
+      </file>
+      <file name="formComponentStyle.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/formComponentStyle.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="6" type="stmt"/>
+      </file>
+      <file name="loader.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/loader.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="70" count="6" type="stmt"/>
+        <line num="71" count="6" type="stmt"/>
+        <line num="72" count="20" type="stmt"/>
+        <line num="86" count="6" type="stmt"/>
+        <line num="88" count="12" type="stmt"/>
+      </file>
+      <file name="modal.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/modal.tsx">
+        <metrics statements="11" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="1"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="60" count="6" type="stmt"/>
+        <line num="61" count="6" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="97" count="6" type="stmt"/>
+        <line num="99" count="12" type="stmt"/>
+      </file>
+      <file name="navbar.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/navbar.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="44" count="6" type="stmt"/>
+        <line num="45" count="12" type="stmt"/>
+      </file>
+      <file name="notification.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/notification.tsx">
+        <metrics statements="7" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+      </file>
+      <file name="oneCard.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/oneCard.tsx">
+        <metrics statements="9" coveredstatements="6" conditionals="3" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="51" count="6" type="stmt"/>
+        <line num="52" count="12" type="stmt"/>
+      </file>
+      <file name="oneNewCard.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/oneNewCard.tsx">
+        <metrics statements="8" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+      </file>
+      <file name="searchPanel.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/components/searchPanel.tsx">
+        <metrics statements="17" coveredstatements="13" conditionals="1" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="24" count="22" type="stmt"/>
+        <line num="25" count="22" type="stmt"/>
+        <line num="26" count="22" type="stmt"/>
+        <line num="27" count="22" type="stmt"/>
+        <line num="28" count="22" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="32" count="22" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="22" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="42" count="22" type="stmt"/>
+        <line num="53" count="6" type="stmt"/>
+        <line num="54" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="New folder (2).rs-react-disney.disney-app.src.containers">
+      <metrics statements="32" coveredstatements="28" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="7"/>
+      <file name="AllCards.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/containers/AllCards.tsx">
+        <metrics statements="9" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="1"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+      </file>
+      <file name="AllNewCards.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/containers/AllNewCards.tsx">
+        <metrics statements="9" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+      </file>
+      <file name="Footer.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/containers/Footer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="39" count="12" type="stmt"/>
+      </file>
+      <file name="Header.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/containers/Header.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="New folder (2).rs-react-disney.disney-app.src.pages">
+      <metrics statements="45" coveredstatements="33" conditionals="18" coveredconditionals="9" methods="14" coveredmethods="8"/>
+      <file name="AboutPage.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/pages/AboutPage.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="42" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+      </file>
+      <file name="ErrorPage.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/pages/ErrorPage.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="42" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+      </file>
+      <file name="ErrorPageStyle.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/pages/ErrorPageStyle.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="6" type="stmt"/>
+      </file>
+      <file name="FormPage.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/pages/FormPage.tsx">
+        <metrics statements="14" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="52" count="6" type="stmt"/>
+        <line num="54" count="12" type="stmt"/>
+      </file>
+      <file name="HomePage.tsx" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/pages/HomePage.tsx">
+        <metrics statements="20" coveredstatements="12" conditionals="14" coveredconditionals="6" methods="6" coveredmethods="2"/>
+        <line num="13" count="22" type="stmt"/>
+        <line num="14" count="22" type="stmt"/>
+        <line num="15" count="22" type="stmt"/>
+        <line num="16" count="22" type="stmt"/>
+        <line num="17" count="22" type="stmt"/>
+        <line num="18" count="22" type="stmt"/>
+        <line num="20" count="22" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="22" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="22" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="22" type="stmt"/>
+        <line num="58" count="6" type="stmt"/>
+        <line num="59" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="New folder (2).rs-react-disney.disney-app.src.redux">
+      <metrics statements="15" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <file name="hooks.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/redux/hooks.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+      </file>
+      <file name="newItemsSlice.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/redux/newItemsSlice.ts">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+      </file>
+      <file name="searchStrSlice.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/redux/searchStrSlice.ts">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="24" count="110" type="stmt"/>
+      </file>
+      <file name="store.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/redux/store.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="New folder (2).rs-react-disney.disney-app.src.utils">
+      <metrics statements="21" coveredstatements="6" conditionals="6" coveredconditionals="2" methods="10" coveredmethods="2"/>
+      <file name="animeApi.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/utils/animeApi.ts">
+        <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+      </file>
+      <file name="functions.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/utils/functions.ts">
+        <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="validation.ts" path="C:/Users/alexs/Desktop/New folder (2)/rs-react-disney/disney-app/src/utils/validation.ts">
+        <metrics statements="5" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+    </package>
+    <package name="studying.rsschool.React.rs-react-disney.disney-app.src">
       <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="App.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/App.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="88" type="stmt"/>
-        <line num="17" count="88" type="stmt"/>
-        <line num="19" count="88" type="stmt"/>
-        <line num="20" count="176" type="stmt"/>
-        <line num="32" count="88" type="stmt"/>
-        <line num="34" count="176" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="375" type="stmt"/>
+        <line num="17" count="375" type="stmt"/>
+        <line num="19" count="375" type="stmt"/>
+        <line num="20" count="750" type="stmt"/>
+        <line num="32" count="375" type="stmt"/>
+        <line num="34" count="750" type="stmt"/>
       </file>
       <file name="Router.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/Router.tsx">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="entry-client.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/entry-client.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="9" count="88" type="stmt"/>
-        <line num="11" count="88" type="stmt"/>
+        <line num="9" count="375" type="stmt"/>
+        <line num="11" count="375" type="stmt"/>
       </file>
       <file name="entry-server.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/entry-server.tsx">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="src.components">
-      <metrics statements="77" coveredstatements="65" conditionals="13" coveredconditionals="10" methods="22" coveredmethods="16"/>
+    <package name="studying.rsschool.React.rs-react-disney.disney-app.src.components">
+      <metrics statements="77" coveredstatements="70" conditionals="13" coveredconditionals="12" methods="22" coveredmethods="18"/>
       <file name="FormComponent.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/FormComponent.tsx">
-        <metrics statements="10" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
-        <line num="8" count="88" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="26" count="8" type="stmt"/>
+        <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="3"/>
+        <line num="8" count="375" type="stmt"/>
+        <line num="14" count="258" type="stmt"/>
+        <line num="26" count="258" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="136" count="3" type="stmt"/>
-        <line num="138" count="88" type="stmt"/>
+        <line num="40" count="258" type="stmt"/>
+        <line num="41" count="51" type="stmt"/>
+        <line num="136" count="54" type="stmt"/>
+        <line num="138" count="375" type="stmt"/>
       </file>
       <file name="FormComponentStyle.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/FormComponentStyle.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="88" type="stmt"/>
+        <line num="3" count="375" type="stmt"/>
       </file>
       <file name="Loader.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/Loader.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="88" type="stmt"/>
-        <line num="70" count="88" type="stmt"/>
-        <line num="71" count="88" type="stmt"/>
-        <line num="72" count="434" type="stmt"/>
-        <line num="86" count="88" type="stmt"/>
-        <line num="88" count="176" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="375" type="stmt"/>
+        <line num="70" count="375" type="stmt"/>
+        <line num="71" count="375" type="stmt"/>
+        <line num="72" count="1286" type="stmt"/>
+        <line num="86" count="375" type="stmt"/>
+        <line num="88" count="750" type="stmt"/>
       </file>
       <file name="Modal.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/Modal.tsx">
-        <metrics statements="11" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="1"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="88" type="stmt"/>
-        <line num="60" count="88" type="stmt"/>
-        <line num="61" count="88" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
+        <metrics statements="11" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="375" type="stmt"/>
+        <line num="60" count="375" type="stmt"/>
+        <line num="61" count="375" type="stmt"/>
+        <line num="62" count="30" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="97" count="88" type="stmt"/>
-        <line num="99" count="176" type="stmt"/>
+        <line num="65" count="30" type="stmt"/>
+        <line num="66" count="30" type="stmt"/>
+        <line num="67" count="30" type="stmt"/>
+        <line num="97" count="375" type="stmt"/>
+        <line num="99" count="750" type="stmt"/>
       </file>
       <file name="Navbar.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/Navbar.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="88" type="stmt"/>
-        <line num="26" count="88" type="stmt"/>
-        <line num="28" count="88" type="stmt"/>
-        <line num="29" count="176" type="stmt"/>
-        <line num="44" count="88" type="stmt"/>
-        <line num="45" count="176" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="375" type="stmt"/>
+        <line num="26" count="375" type="stmt"/>
+        <line num="28" count="375" type="stmt"/>
+        <line num="29" count="750" type="stmt"/>
+        <line num="44" count="375" type="stmt"/>
+        <line num="45" count="750" type="stmt"/>
       </file>
       <file name="Notification.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/Notification.tsx">
         <metrics statements="7" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="88" type="stmt"/>
-        <line num="12" count="88" type="stmt"/>
-        <line num="17" count="88" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="375" type="stmt"/>
+        <line num="12" count="375" type="stmt"/>
+        <line num="17" count="375" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="19" count="88" type="stmt"/>
-        <line num="21" count="176" type="stmt"/>
+        <line num="19" count="375" type="stmt"/>
+        <line num="21" count="750" type="stmt"/>
       </file>
       <file name="OneCard.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/OneCard.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="88" type="stmt"/>
-        <line num="26" count="88" type="stmt"/>
-        <line num="32" count="88" type="stmt"/>
-        <line num="33" count="180" type="stmt"/>
-        <line num="34" count="180" type="stmt"/>
-        <line num="35" count="180" type="stmt"/>
-        <line num="52" count="88" type="stmt"/>
-        <line num="53" count="176" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="375" type="stmt"/>
+        <line num="26" count="375" type="stmt"/>
+        <line num="32" count="375" type="stmt"/>
+        <line num="33" count="1160" type="stmt"/>
+        <line num="34" count="1160" type="stmt"/>
+        <line num="35" count="1160" type="stmt"/>
+        <line num="52" count="375" type="stmt"/>
+        <line num="53" count="750" type="stmt"/>
       </file>
       <file name="OneNewCard.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/OneNewCard.tsx">
         <metrics statements="8" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="88" type="stmt"/>
-        <line num="18" count="88" type="stmt"/>
-        <line num="23" count="88" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="375" type="stmt"/>
+        <line num="18" count="375" type="stmt"/>
+        <line num="23" count="375" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="36" count="88" type="stmt"/>
-        <line num="38" count="176" type="stmt"/>
+        <line num="36" count="375" type="stmt"/>
+        <line num="38" count="750" type="stmt"/>
       </file>
       <file name="SearchPanel.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/components/SearchPanel.tsx">
         <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="5"/>
-        <line num="5" count="88" type="stmt"/>
-        <line num="20" count="88" type="stmt"/>
-        <line num="24" count="466" type="stmt"/>
-        <line num="25" count="466" type="stmt"/>
-        <line num="26" count="466" type="stmt"/>
-        <line num="27" count="466" type="stmt"/>
-        <line num="28" count="466" type="stmt"/>
-        <line num="29" count="208" type="stmt"/>
-        <line num="32" count="466" type="stmt"/>
+        <line num="5" count="375" type="stmt"/>
+        <line num="20" count="375" type="stmt"/>
+        <line num="24" count="1596" type="stmt"/>
+        <line num="25" count="1596" type="stmt"/>
+        <line num="26" count="1596" type="stmt"/>
+        <line num="27" count="1596" type="stmt"/>
+        <line num="28" count="1596" type="stmt"/>
+        <line num="29" count="634" type="stmt"/>
+        <line num="32" count="1596" type="stmt"/>
         <line num="33" count="36" type="stmt"/>
-        <line num="36" count="466" type="stmt"/>
+        <line num="36" count="1596" type="stmt"/>
         <line num="37" count="40" type="cond" truecount="1" falsecount="0"/>
         <line num="38" count="4" type="stmt"/>
         <line num="39" count="4" type="stmt"/>
-        <line num="42" count="466" type="stmt"/>
-        <line num="53" count="88" type="stmt"/>
-        <line num="54" count="176" type="stmt"/>
+        <line num="42" count="1596" type="stmt"/>
+        <line num="53" count="375" type="stmt"/>
+        <line num="54" count="750" type="stmt"/>
       </file>
     </package>
-    <package name="src.containers">
-      <metrics statements="32" coveredstatements="31" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="9"/>
+    <package name="studying.rsschool.React.rs-react-disney.disney-app.src.containers">
+      <metrics statements="32" coveredstatements="31" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="10"/>
       <file name="AllCards.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/containers/AllCards.tsx">
-        <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="3"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="88" type="stmt"/>
-        <line num="14" count="88" type="stmt"/>
-        <line num="20" count="88" type="stmt"/>
-        <line num="21" count="18" type="stmt"/>
-        <line num="23" count="18" type="stmt"/>
-        <line num="26" count="180" type="stmt"/>
-        <line num="30" count="88" type="stmt"/>
-        <line num="31" count="176" type="stmt"/>
+        <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="375" type="stmt"/>
+        <line num="14" count="375" type="stmt"/>
+        <line num="20" count="375" type="stmt"/>
+        <line num="21" count="116" type="stmt"/>
+        <line num="23" count="116" type="stmt"/>
+        <line num="26" count="1160" type="stmt"/>
+        <line num="30" count="375" type="stmt"/>
+        <line num="31" count="750" type="stmt"/>
       </file>
       <file name="AllNewCards.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/containers/AllNewCards.tsx">
         <metrics statements="9" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="2"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="88" type="stmt"/>
-        <line num="13" count="88" type="stmt"/>
-        <line num="18" count="88" type="stmt"/>
-        <line num="19" count="8" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="375" type="stmt"/>
+        <line num="13" count="375" type="stmt"/>
+        <line num="18" count="375" type="stmt"/>
+        <line num="19" count="156" type="stmt"/>
+        <line num="20" count="156" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="27" count="88" type="stmt"/>
-        <line num="28" count="176" type="stmt"/>
+        <line num="27" count="375" type="stmt"/>
+        <line num="28" count="750" type="stmt"/>
       </file>
       <file name="Footer.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/containers/Footer.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="88" type="stmt"/>
-        <line num="23" count="88" type="stmt"/>
-        <line num="25" count="88" type="stmt"/>
-        <line num="26" count="176" type="stmt"/>
-        <line num="37" count="88" type="stmt"/>
-        <line num="39" count="176" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="375" type="stmt"/>
+        <line num="23" count="375" type="stmt"/>
+        <line num="25" count="375" type="stmt"/>
+        <line num="26" count="750" type="stmt"/>
+        <line num="37" count="375" type="stmt"/>
+        <line num="39" count="750" type="stmt"/>
       </file>
       <file name="Header.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/containers/Header.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="704" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="88" type="stmt"/>
-        <line num="14" count="88" type="stmt"/>
-        <line num="16" count="88" type="stmt"/>
-        <line num="17" count="176" type="stmt"/>
-        <line num="26" count="88" type="stmt"/>
-        <line num="28" count="176" type="stmt"/>
+        <line num="1" count="3000" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="375" type="stmt"/>
+        <line num="14" count="375" type="stmt"/>
+        <line num="16" count="375" type="stmt"/>
+        <line num="17" count="750" type="stmt"/>
+        <line num="26" count="375" type="stmt"/>
+        <line num="28" count="750" type="stmt"/>
       </file>
     </package>
-    <package name="src.data">
+    <package name="studying.rsschool.React.rs-react-disney.disney-app.src.data">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="HPResponse.models.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/data/HPResponse.models.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="src.pages">
-      <metrics statements="45" coveredstatements="35" conditionals="18" coveredconditionals="13" methods="14" coveredmethods="9"/>
+    <package name="studying.rsschool.React.rs-react-disney.disney-app.src.pages">
+      <metrics statements="45" coveredstatements="39" conditionals="18" coveredconditionals="17" methods="14" coveredmethods="11"/>
       <file name="AboutPage.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/pages/AboutPage.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="616" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="88" type="stmt"/>
-        <line num="4" count="28" type="stmt"/>
-        <line num="10" count="88" type="stmt"/>
-        <line num="12" count="88" type="stmt"/>
+        <line num="1" count="2625" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="375" type="stmt"/>
+        <line num="4" count="72" type="stmt"/>
+        <line num="10" count="375" type="stmt"/>
+        <line num="12" count="375" type="stmt"/>
       </file>
       <file name="ErrorPage.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/pages/ErrorPage.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="616" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="88" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="25" count="88" type="stmt"/>
-        <line num="27" count="88" type="stmt"/>
+        <line num="1" count="2625" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="375" type="stmt"/>
+        <line num="5" count="46" type="stmt"/>
+        <line num="25" count="375" type="stmt"/>
+        <line num="27" count="375" type="stmt"/>
       </file>
       <file name="ErrorPageStyle.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/pages/ErrorPageStyle.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="88" type="stmt"/>
+        <line num="3" count="375" type="stmt"/>
       </file>
       <file name="FormPage.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/pages/FormPage.tsx">
         <metrics statements="14" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
-        <line num="11" count="88" type="stmt"/>
-        <line num="29" count="88" type="stmt"/>
-        <line num="31" count="88" type="stmt"/>
-        <line num="32" count="8" type="stmt"/>
-        <line num="33" count="8" type="stmt"/>
-        <line num="34" count="88" type="stmt"/>
-        <line num="35" count="8" type="stmt"/>
+        <line num="11" count="375" type="stmt"/>
+        <line num="29" count="375" type="stmt"/>
+        <line num="31" count="375" type="stmt"/>
+        <line num="32" count="156" type="stmt"/>
+        <line num="33" count="156" type="stmt"/>
+        <line num="34" count="375" type="stmt"/>
+        <line num="35" count="156" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="42" count="8" type="stmt"/>
-        <line num="52" count="88" type="stmt"/>
-        <line num="54" count="176" type="stmt"/>
+        <line num="42" count="156" type="stmt"/>
+        <line num="52" count="375" type="stmt"/>
+        <line num="54" count="750" type="stmt"/>
       </file>
       <file name="HomePage.tsx" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/pages/HomePage.tsx">
-        <metrics statements="20" coveredstatements="14" conditionals="14" coveredconditionals="10" methods="6" coveredmethods="3"/>
-        <line num="13" count="466" type="stmt"/>
-        <line num="14" count="466" type="stmt"/>
-        <line num="15" count="466" type="stmt"/>
-        <line num="16" count="466" type="stmt"/>
-        <line num="17" count="466" type="stmt"/>
-        <line num="18" count="466" type="stmt"/>
-        <line num="20" count="466" type="stmt"/>
+        <metrics statements="20" coveredstatements="18" conditionals="14" coveredconditionals="14" methods="6" coveredmethods="5"/>
+        <line num="13" count="1596" type="stmt"/>
+        <line num="14" count="1596" type="stmt"/>
+        <line num="15" count="1596" type="stmt"/>
+        <line num="16" count="1596" type="stmt"/>
+        <line num="17" count="1596" type="stmt"/>
+        <line num="18" count="1596" type="stmt"/>
+        <line num="20" count="1596" type="stmt"/>
         <line num="21" count="4" type="stmt"/>
         <line num="22" count="4" type="stmt"/>
-        <line num="24" count="466" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="32" count="466" type="stmt"/>
+        <line num="24" count="1596" type="stmt"/>
+        <line num="25" count="150" type="stmt"/>
+        <line num="26" count="15" type="stmt"/>
+        <line num="27" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="15" type="stmt"/>
+        <line num="32" count="1596" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="37" count="466" type="stmt"/>
-        <line num="58" count="88" type="stmt"/>
-        <line num="59" count="88" type="stmt"/>
+        <line num="37" count="1596" type="stmt"/>
+        <line num="58" count="375" type="stmt"/>
+        <line num="59" count="375" type="stmt"/>
       </file>
     </package>
-    <package name="src.redux">
+    <package name="studying.rsschool.React.rs-react-disney.disney-app.src.redux">
       <metrics statements="15" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
       <file name="hooks.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/redux/hooks.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="88" type="stmt"/>
-        <line num="5" count="88" type="stmt"/>
+        <line num="4" count="375" type="stmt"/>
+        <line num="5" count="375" type="stmt"/>
       </file>
       <file name="newItemsSlice.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/redux/newItemsSlice.ts">
         <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="9" count="88" type="stmt"/>
-        <line num="13" count="88" type="stmt"/>
+        <line num="9" count="375" type="stmt"/>
+        <line num="13" count="375" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="23" count="88" type="stmt"/>
-        <line num="25" count="88" type="stmt"/>
+        <line num="23" count="375" type="stmt"/>
+        <line num="25" count="375" type="stmt"/>
       </file>
       <file name="searchStrSlice.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/redux/searchStrSlice.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="8" count="88" type="stmt"/>
-        <line num="12" count="88" type="stmt"/>
+        <line num="8" count="375" type="stmt"/>
+        <line num="12" count="375" type="stmt"/>
         <line num="17" count="36" type="stmt"/>
-        <line num="22" count="88" type="stmt"/>
-        <line num="24" count="2012" type="stmt"/>
+        <line num="22" count="375" type="stmt"/>
+        <line num="24" count="7632" type="stmt"/>
       </file>
       <file name="store.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/redux/store.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="6" count="88" type="stmt"/>
-        <line num="13" count="88" type="stmt"/>
-        <line num="16" count="88" type="stmt"/>
+        <line num="6" count="375" type="stmt"/>
+        <line num="13" count="375" type="stmt"/>
+        <line num="16" count="375" type="stmt"/>
       </file>
     </package>
-    <package name="src.utils">
+    <package name="studying.rsschool.React.rs-react-disney.disney-app.src.utils">
       <metrics statements="21" coveredstatements="7" conditionals="6" coveredconditionals="2" methods="10" coveredmethods="3"/>
       <file name="animeApi.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/utils/animeApi.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="5" count="88" type="stmt"/>
-        <line num="8" count="88" type="stmt"/>
-        <line num="10" count="90" type="stmt"/>
-        <line num="15" count="13" type="stmt"/>
-        <line num="21" count="88" type="stmt"/>
+        <line num="5" count="375" type="stmt"/>
+        <line num="8" count="375" type="stmt"/>
+        <line num="10" count="303" type="stmt"/>
+        <line num="15" count="47" type="stmt"/>
+        <line num="21" count="375" type="stmt"/>
       </file>
       <file name="functions.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/utils/functions.ts">
         <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
@@ -305,9 +604,9 @@
       </file>
       <file name="validation.ts" path="C:/Users/alexs/Desktop/studying/rsschool/React/rs-react-disney/disney-app/src/utils/validation.ts">
         <metrics statements="5" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="88" type="stmt"/>
+        <line num="1" count="375" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
-        <line num="8" count="88" type="stmt"/>
+        <line num="8" count="375" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
